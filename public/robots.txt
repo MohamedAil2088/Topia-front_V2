@@ -1,0 +1,15 @@
+# TOPIA - Men's Fashion E-commerce
+# Allow all search engines
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /cart
+Disallow: /checkout
+
+# Sitemap location
+Sitemap: https://topia-fashion.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

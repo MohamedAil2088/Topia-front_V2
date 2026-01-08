@@ -1,0 +1,797 @@
+{
+    "common": {
+        "loading": "Loading...",
+        "error": "Error",
+        "save": "Save",
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "edit": "Edit",
+        "confirm": "Confirm",
+        "yes": "Yes",
+        "no": "No",
+        "search": "Search",
+        "filter": "Filter",
+        "sort": "Sort",
+        "addToCart": "Add to Cart",
+        "addToWishlist": "Add to Wishlist",
+        "buyNow": "Buy Now",
+        "outOfStock": "Out of Stock",
+        "inStock": "In Stock",
+        "price": "Price",
+        "quantity": "Quantity",
+        "total": "Total",
+        "viewMore": "View More",
+        "showLess": "Show Less"
+    },
+    "navbar": {
+        "home": "Home",
+        "shop": "Shop",
+        "newArrivals": "New Arrivals",
+        "designs": "Designs",
+        "about": "About",
+        "contact": "Contact",
+        "search": "Search products...",
+        "profile": "Profile",
+        "orders": "Orders",
+        "admin": "Admin Dashboard",
+        "logout": "Logout",
+        "login": "Login",
+        "register": "Register",
+        "cart": "Cart",
+        "wishlist": "Wishlist",
+        "myProfile": "My Profile",
+        "myOrders": "My Orders",
+        "customOrders": "Custom Orders",
+        "settings": "Settings",
+        "signIn": "Sign In",
+        "viewAllResults": "View all results →"
+    },
+    "footer": {
+        "aboutUs": "About Us",
+        "description": "Definitive menswear for the modern individual. We craft pieces that blend contemporary aesthetics with timeless quality.",
+        "shop": "SHOP",
+        "allProducts": "All Products",
+        "newArrivals": "New Arrivals",
+        "bestSellers": "Best Sellers",
+        "categories": "Categories",
+        "support": "SUPPORT",
+        "contactUs": "Contact Us",
+        "ourStory": "Our Story",
+        "shippingReturns": "Shipping & Returns",
+        "faq": "FAQ",
+        "sizeGuide": "Size Guide",
+        "getInTouch": "GET IN TOUCH",
+        "address": "123 Fashion Ave, New York, NY 10001",
+        "email": "hello@topia.com",
+        "phone": "+1 (555) 123-4567",
+        "newsletter": "Subscribe to our newsletter",
+        "subscribe": "Subscribe",
+        "copyright": "© {{year}} Topia. All rights reserved.",
+        "privacyPolicy": "Privacy Policy",
+        "termsOfService": "Terms of Service",
+        "sale": "Sale"
+    },
+    "home": {
+        "stats": {
+            "products": "Products",
+            "customers": "Customers",
+            "rating": "Rating"
+        },
+        "hero": {
+            "discover": "Discover",
+            "title": "ELEVATE YOUR STYLE",
+            "subtitle": "Upgrade your wardrobe with our curated collection of premium menswear. Designed for confidence and comfort.",
+            "shopNow": "Shop Now",
+            "exploreCollection": "Explore Collection",
+            "typingWords": {
+                "word1": "Premium Style",
+                "word2": "Modern Elegance",
+                "word3": "Timeless Quality"
+            }
+        },
+        "categories": {
+            "title": "Shop by Category",
+            "subtitle": "Curated collections for every occasion",
+            "tshirts": "T-Shirts",
+            "shirts": "Shirts",
+            "pants": "Pants",
+            "jackets": "Jackets",
+            "accessories": "Accessories",
+            "shoes": "Shoes",
+            "exploreCollection": "Explore Collection"
+        },
+        "featured": {
+            "title": "FEATURED PRODUCTS",
+            "subtitle": "Handpicked essentials for your wardrobe",
+            "viewAll": "View All Products"
+        },
+        "benefits": {
+            "title": "WHY CHOOSE TOPIA",
+            "freeShipping": "Free Shipping",
+            "freeShippingDesc": "On orders over 1000 EGP",
+            "qualityGuarantee": "Quality Guarantee",
+            "qualityGuaranteeDesc": "Premium materials & craftsmanship",
+            "securePayment": "Secure Payment",
+            "securePaymentDesc": "100% protected checkout",
+            "easyReturns": "Easy Returns",
+            "easyReturnsDesc": "30-day return policy",
+            "support": "24/7 Support",
+            "supportDesc": "Dedicated customer service"
+        },
+        "bestSellers": {
+            "title": "Best Sellers",
+            "description": "Most popular items this month",
+            "badge": "#1 Best Seller"
+        },
+        "newArrivals": {
+            "description": "The latest trends fresh from the runway"
+        },
+        "customizable": {
+            "badge": "Create Your Own",
+            "title": "Customizable Collection",
+            "description": "Add your unique touch to these premium products. Upload your design or choose from our exclusive templates.",
+            "viewAll": "View All Customizable Products"
+        },
+        "testimonials": {
+            "title": "Customer Reviews",
+            "subtitle": "See what our customers are saying",
+            "verifiedCustomer": "Verified Customer"
+        },
+        "instagram": {
+            "title": "Follow Us on Instagram",
+            "handle": "@topia.menswear",
+            "followButton": "Follow Us for More"
+        },
+        "ourStory": {
+            "title": "Our Story",
+            "description": "Founded in 2020, TOPIA has been redefining men's fashion with a perfect blend of contemporary design and timeless elegance. We believe every man deserves to look and feel his best.",
+            "mission": "Our mission is simple: to provide premium quality menswear that combines comfort, style, and affordability. Each piece is carefully crafted with attention to detail and designed to elevate your everyday style.",
+            "discoverMore": "Discover More"
+        },
+        "whyChoose": {
+            "subtitle": "We're committed to providing you the best shopping experience",
+            "quality": {
+                "title": "Premium Quality",
+                "desc": "Hand-picked materials from the finest sources"
+            },
+            "shipping": {
+                "title": "Fast Shipping",
+                "desc": "Express delivery to your doorstep"
+            },
+            "returns": {
+                "title": "Easy Returns",
+                "desc": "30-day hassle-free return policy"
+            },
+            "support": {
+                "title": "Support",
+                "desc": "Always here to help you"
+            }
+        },
+        "trending": {
+            "title": "Trending Now",
+            "subtitle": "Most popular picks this week"
+        },
+        "newsletter": {
+            "title": "Join the Elite",
+            "subtitle": "Sign up for exclusive offers, early access to new collections, and style tips from our experts.",
+            "emailPlaceholder": "Enter your email address",
+            "subscribe": "Subscribe",
+            "privacy": "We respect your privacy. Unsubscribe anytime."
+        },
+        "trustedBy": {
+            "title": "Trusted By",
+            "subtitle": "Official partner with leading fashion brands"
+        },
+        "sizeGuide": {
+            "title": "Find Your Perfect Fit",
+            "subtitle": "Use our interactive size guide to find the right size for you"
+        }
+    },
+    "itemAdded": "Item added to cart",
+    "itemRemoved": "Item removed from cart",
+    "checkout": {
+        "title": "Secure Checkout",
+        "subtitle": "Complete your elite acquisition",
+        "step1": "Shipping Details",
+        "step1_subtitle": "01",
+        "shippingAddress": "Shipping Address",
+        "city": "City",
+        "postalCode": "Postal Code",
+        "country": "Country",
+        "continueToPayment": "Continue to Payment",
+        "step2": "Payment Method",
+        "step2_subtitle": "02",
+        "card": "Card",
+        "cod": "Cash On Delivery",
+        "vodafone": "Vodafone Cash",
+        "cardNumber": "Card Number",
+        "expiryDate": "Expiry Date",
+        "cvc": "CVC",
+        "pay": "Pay",
+        "processing": "Processing...",
+        "vodafoneInstructions": "Please transfer {{amount}} to {{number}}",
+        "uploadReceipt": "Upload Receipt",
+        "transactionId": "Transaction ID",
+        "orderSummary": "Order Summary",
+        "qty": "Qty",
+        "custom": "CUSTOM",
+        "subtotal": "Subtotal",
+        "handling": "Handling",
+        "free": "Free",
+        "elitePackaging": "Elite Packaging",
+        "elitePackagingDesc": "Scented Wax Seal",
+        "discountApplied": "Discount Applied",
+        "total": "Total",
+        "placeOrder": "Place Order",
+        "successTitle": "Order Placed Successfully!",
+        "successMessage": "Your order has been confirmed!",
+        "customSuccessMessage": "Your custom orders are being reviewed. We will contact you soon!",
+        "viewOrders": "View Orders",
+        "errorTitle": "Error",
+        "fillShipping": "Please fill in all shipping details",
+        "fillCard": "Please fill in all card details",
+        "fillTransaction": "Please enter the transaction ID",
+        "receiptUploaded": "Receipt Uploaded",
+        "receiptUploadSuccess": "Image uploaded successfully!",
+        "receiptUploadError": "Failed to upload image",
+        "back": "Back",
+        "enterTransactionId": "Enter Transaction ID"
+    },
+    "orders": {
+        "title": "My Orders",
+        "orderNumber": "Order #",
+        "date": "Date",
+        "status": "Status",
+        "total": "Total",
+        "viewDetails": "View Details",
+        "noOrders": "You have no orders yet",
+        "startShopping": "Start Shopping",
+        "orderDetails": "Order Details",
+        "orderStatus": {
+            "pending": "Pending",
+            "processing": "Processing",
+            "shipped": "Shipped",
+            "delivered": "Delivered",
+            "cancelled": "Cancelled"
+        },
+        "trackOrder": "Track Order",
+        "cancelOrder": "Cancel Order",
+        "reorder": "Reorder",
+        "management": "Management",
+        "showing": "Showing",
+        "in_collection": "orders in your collection",
+        "all": "All",
+        "verifiedMember": "Verified Member",
+        "profileOverview": "Profile Overview",
+        "myCustomOrders": "My Custom Orders",
+        "purchaseHistory": "Purchase History",
+        "savedAddresses": "Saved Addresses",
+        "retrievingRecords": "Retrieving Records...",
+        "archiveAccessError": "Archive Access Error",
+        "noArchiveFound": "No Archive Found",
+        "fashionJourney": "Your fashion journey is yet to begin. Discover the finest selection in our elite shop.",
+        "startExploring": "Start Exploring",
+        "orderId": "Order ID",
+        "processingDelivery": "Processing Delivery",
+        "delivered": "Delivered",
+        "items": "Items",
+        "pieces": "Pieces",
+        "archiveRecord": "Archive Record",
+        "investment": "Investment",
+        "gatePriority": "Gate Priority",
+        "paidInFull": "Paid In Full",
+        "pendingPayment": "Pending Payment",
+        "examineDetails": "Examine Details",
+        "logisticPipeline": "Logistic Pipeline"
+    },
+    "customOrders": {
+        "title": "My Custom Creations",
+        "creations": "Creations",
+        "subtitle": "Track your personalized design orders",
+        "emptyTitle": "No Custom Orders Yet",
+        "emptyDesc": "Your personal design studio is waiting. Create your first masterpiece today.",
+        "browseBtn": "Browse For Customization",
+        "customOrder": "Custom Order",
+        "placedOn": "Placed on",
+        "size": "Size",
+        "color": "Color",
+        "qty": "Qty",
+        "print": "Print",
+        "uploadedDesigns": "Your Uploaded Designs",
+        "totalInvestment": "Total Investment",
+        "cancelOrder": "Cancel Order",
+        "orderDetails": "Order Details",
+        "status": {
+            "pending": "Pending",
+            "reviewing": "Reviewing",
+            "approved": "Approved",
+            "inDesign": "In Design",
+            "printing": "Printing",
+            "completed": "Completed",
+            "shipped": "Shipped",
+            "delivered": "Delivered",
+            "cancelled": "Cancelled"
+        }
+    },
+    "purchaseHistory": {
+        "title": "Purchase History",
+        "subtitle": "Showing {{count}} pieces in your signature collection",
+        "filtering": "Filtering History...",
+        "emptyTitle": "No History Yet",
+        "emptyDesc": "You haven't purchased any items yet. Your favorite pieces will appear here after your first order.",
+        "browseShop": "Browse Shop",
+        "eliteAsset": "Elite Asset",
+        "originalPurchase": "Original Purchase",
+        "price": "Price",
+        "buyAgain": "Buy Again",
+        "banner": {
+            "title": "Elite Re-ordering",
+            "desc": "Your essentials are just a click away. Enjoy priority processing on all re-ordered items from your signature collection.",
+            "fastLane": "Fast Lane",
+            "priorityTrack": "Priority Track"
+        },
+        "addedToCart": {
+            "title": "Added to Cart",
+            "text": "{{name}} is ready for checkout!"
+        }
+    },
+    "addresses": {
+        "title": "Saved Addresses",
+        "subtitle": "Manage your shipping destinations for faster checkout",
+        "addBtn": "Add New Address",
+        "addFirstBtn": "Add First Address",
+        "accessingVault": "Accessing Vault...",
+        "emptyTitle": "Empty Vault",
+        "emptyDesc": "You haven't saved any delivery destinations. Add your first address to accelerate your next checkout.",
+        "form": {
+            "titleNew": "New Delivery Address",
+            "titleEdit": "Edit Address",
+            "cancel": "Cancel",
+            "street": "Street Address",
+            "city": "City",
+            "state": "State / Province",
+            "zip": "ZIP / Postal Code",
+            "default": "Set as default delivery address",
+            "save": "Save Architecture",
+            "confirm": "Confirm Destination",
+            "successAdd": "Address Added",
+            "successUpdate": "Address Updated",
+            "error": "Something went wrong"
+        },
+        "delete": {
+            "title": "Delete Address?",
+            "text": "You won't be able to revert this!",
+            "confirm": "Yes, delete it!",
+            "success": "Deleted!",
+            "error": "Failed to delete address"
+        },
+        "banner": {
+            "title": "Elite Shipping Pipeline",
+            "desc": "Your addresses are encrypted and secured. Having multiple addresses allows you to switch between home, office, and travel destinations with a single tap during checkout."
+        }
+    },
+    "wishlist": {
+        "title": "My Wishlist",
+        "empty": "Your favorite items",
+        "emptyTitle": "Your wishlist is empty",
+        "emptySubset": "Explore our premium collection and save the items you love for later.",
+        "addedToWishlist": "Added to wishlist ❤️",
+        "removedFromWishlist": "Removed from wishlist",
+        "moveToCart": "Move to Cart",
+        "remove": "Remove"
+    },
+    "auth": {
+        "login": "Login",
+        "register": "Register",
+        "email": "Email Address",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "name": "Full Name",
+        "phone": "Phone Number",
+        "rememberMe": "Remember Me",
+        "forgotPassword": "Forgot Password?",
+        "dontHaveAccount": "Don't have an account?",
+        "alreadyHaveAccount": "Already have an account?",
+        "createAccount": "Create Account",
+        "signIn": "Sign In",
+        "signUp": "Sign Up",
+        "resetPassword": "Reset Password",
+        "sendResetLink": "Send Reset Link",
+        "backToLogin": "Back to Login",
+        "verificationCode": "Verification Code",
+        "verify": "Verify"
+    },
+    "contact": {
+        "title": "Contact Us",
+        "subtitle": "Get in touch with us",
+        "name": "Your Name",
+        "email": "Your Email",
+        "subject": "Subject",
+        "message": "Message",
+        "send": "Send Message",
+        "messageSent": "Message sent successfully!",
+        "getInTouch": "Get in Touch",
+        "visitUs": "Visit Us",
+        "callUs": "Call Us",
+        "emailUs": "Email Us"
+    },
+    "about": {
+        "title": "About TOPIA",
+        "subtitle": "Crafting Excellence Since 2024",
+        "ourStory": "Our Story",
+        "ourMission": "Our Mission",
+        "ourValues": "Our Values",
+        "quality": "Quality",
+        "qualityDesc": "Premium materials and expert craftsmanship",
+        "sustainability": "Sustainability",
+        "sustainabilityDesc": "Ethical and eco-friendly practices",
+        "innovation": "Innovation",
+        "innovationDesc": "Modern designs with timeless appeal"
+    },
+    "sizeGuide": {
+        "quickFinder": "Quick Size Finder",
+        "findfit": "Find Your Perfect Fit",
+        "weight": "Weight",
+        "height": "Height",
+        "calculate": "Calculate My Size",
+        "result": "Your Recommended Size",
+        "recalc": "Calculate Again"
+    },
+    "profile": {
+        "title": "Profile Overview",
+        "subtitle": "Manage your account and view your rewards",
+        "secureAccount": "Secure Account",
+        "verifiedMember": "Verified Member",
+        "menu": {
+            "overview": "Profile Overview",
+            "orders": "My Orders",
+            "customOrders": "My Custom Orders",
+            "history": "Purchase History",
+            "addresses": "Saved Addresses"
+        },
+        "rewards": {
+            "eliteMembership": "Elite Membership",
+            "balanceTitle": "Your Elite Balance",
+            "description": "Unlock exclusive rewards. You currently have <1>{{points}} Points</1> which is equal to <3>{{value}} EGP</3>.",
+            "points": "Points",
+            "howTo": "How It Works",
+            "realTime": "Real-time Updates",
+            "modal": {
+                "title": "Elite Rewards Program",
+                "subtitle": "Earn points with every purchase and interactions",
+                "close": "Close",
+                "shopping": {
+                    "title": "Smart Shopping",
+                    "desc": "Earn <1>1 Point</1> for every <3>10 EGP</3> spent."
+                },
+                "reviews": {
+                    "title": "Community Voice",
+                    "desc": "Earn <1>50 Points</1> for every review."
+                },
+                "redemption": {
+                    "title": "Seamless Redemption",
+                    "desc": "Redeem your points directly at checkout. <1>100 Points = 10 EGP</1>."
+                }
+            }
+        },
+        "personalInfo": {
+            "title": "Personal Info",
+            "displayName": "Display Name",
+            "email": "Email Address",
+            "security": "Security",
+            "leaveBlank": "Leave blank to keep current password",
+            "newPassword": "New Password",
+            "confirmPassword": "Confirm Password",
+            "updateButton": "Update Profile"
+        },
+        "alerts": {
+            "nameRequired": "Name Required",
+            "nameRequiredText": "Please enter your name",
+            "weakPassword": "Weak Password",
+            "weakPasswordText": "Password must be at least 6 characters",
+            "mismatch": "Password Mismatch",
+            "mismatchText": "Passwords do not match",
+            "updated": "Profile Updated",
+            "updatedText": "Your profile information has been updated successfully",
+            "failed": "Update Failed",
+            "failedText": "Something went wrong"
+        }
+    },
+    "categories": {
+        "shirts": "Shirts",
+        "pants": "Pants",
+        "shoes": "Shoes",
+        "jackets": "Jackets",
+        "t-shirts": "T-Shirts",
+        "accessories": "Accessories"
+    },
+    "quickView": {
+        "selectSize": "Select Size",
+        "selectColor": "Select Color",
+        "addToCart": "Add to Cart",
+        "added": "Added",
+        "fullDetails": "Full Details",
+        "selectSizeColor": "Please select size and color"
+    },
+    "productDetails": {
+        "inStock": "In Stock",
+        "outOfStock": "Out of Stock",
+        "reviews": "Reviews",
+        "sellingFast": "Selling Fast: {{count}} people bought this in the last 24h",
+        "descriptionFallback": "Experience premium quality with our meticulously crafted collection.",
+        "expressDelivery": "Elite Express Delivery",
+        "arrivesBy": "Order generally arrives by",
+        "tomorrow": "Tomorrow",
+        "dayAfter": "the day after",
+        "color": "Color",
+        "size": "Size",
+        "sizeGuide": "Size Guide",
+        "quantity": "Quantity",
+        "addToCart": "Add to Cart",
+        "freeShipping": "Free Shipping",
+        "freeReturns": "Free Returns",
+        "secureCheckout": "Secure Checkout",
+        "customerReviews": "Customer Reviews",
+        "writeReview": "Write a Review",
+        "rating": "Rating",
+        "comment": "Comment",
+        "shareExperience": "Share your experience...",
+        "submitReview": "Submit Review",
+        "submitting": "Submitting...",
+        "loginRequired": "Login Required",
+        "loginToReview": "Please log in to submit a review.",
+        "login": "Login",
+        "noReviews": "No reviews yet. Be the first to review!",
+        "recentlyViewed": "Recently Viewed",
+        "backToShop": "Back to Shop",
+        "oops": "Oops!",
+        "success": "Success",
+        "reviewSubmitted": "Review submitted successfully",
+        "reviewFailed": "Review Failed",
+        "continueShopping": "Continue Shopping",
+        "addedToCart": "Added to Cart!",
+        "customDesignAdded": "Your custom design has been added to cart.",
+        "productAdded": "Product added to cart successfully!",
+        "goToCart": "Go to Cart",
+        "sizeGuideTitle": "Size Guide",
+        "sizeGuideSubtitle": "Find your perfect fit for Topia garments",
+        "chest": "Chest (cm)",
+        "waist": "Waist (cm)",
+        "length": "Length (cm)",
+        "fittingGuarantee": "Elite Fitting Guarantee",
+        "guaranteeText": "Not the right fit? Exchange it for free within 14 days. No questions asked.",
+        "youMayAlsoLike": "You may also like",
+        "addedToWishlist": "Added to wishlist ❤️",
+        "removedFromWishlist": "Removed from wishlist"
+    },
+    "product": {
+        "inStock": "In Stock",
+        "outOfStock": "Out of Stock",
+        "onlyLeft": "Only {{count}} left!"
+    },
+    "shop": {
+        "title": "Topia Collection",
+        "subtitle": "Premium quality menswear designed for the modern gentleman. Discover the latest trends and timeless classics.",
+        "filters": "Filters",
+        "searchPlaceholder": "Search for something specific...",
+        "activeFilters": "Active Filters",
+        "clearFilters": "Clear Filters",
+        "showing": "Showing",
+        "products": "Products",
+        "category": "Category",
+        "priceRange": "Price Range",
+        "sortBy": "Sort By",
+        "sortOptions": {
+            "relevance": "✨ Relevance",
+            "newest": "🔥 Newest Arrivals",
+            "priceLowHigh": "💰 Price: Low to High",
+            "priceHighLow": "💎 Price: High to Low"
+        },
+        "noMatches": "No matches found",
+        "noMatchesText": "We couldn't find any items matching your filters. Try adjusting your search criteria.",
+        "resetFilters": "Reset Filters",
+        "sorted": "Sorted",
+        "page": "Page",
+        "of": "of"
+    },
+    "profile": {
+        "title": "Account Settings",
+        "subtitle": "Manage your profile, orders and elite rewards",
+        "secureAccount": "Secure Account",
+        "verifiedMember": "Verified Member",
+        "menu": {
+            "overview": "Profile Overview",
+            "orders": "My Orders",
+            "customOrders": "My Custom Orders",
+            "history": "Purchase History",
+            "addresses": "Saved Addresses"
+        },
+        "rewards": {
+            "eliteMembership": "Elite Membership",
+            "balanceTitle": "Your Rewards Balance",
+            "description": "Your loyalty is valuable. Every <1>100 points</1> gives you <3>10 EGP</3> credit back for your next purchase.",
+            "howTo": "How to accumulate points?",
+            "points": "Points",
+            "realTime": "Real-time Update",
+            "modal": {
+                "title": "Elite Rewards Guide",
+                "subtitle": "Earn points with every step you take in Topia.",
+                "shopping": {
+                    "title": "Shopping Rewards",
+                    "desc": "Earn <1>1 point</1> for every <3>10 EGP</3> spent on any collection."
+                },
+                "reviews": {
+                    "title": "Review Contributions",
+                    "desc": "Verified purchasers receive <1>50 points</1> for every verified review with images."
+                },
+                "redemption": {
+                    "title": "Redemption Rule",
+                    "desc": "Points are automatically converted to credit during checkout. <1>100 points = 10 EGP discount</1>."
+                },
+                "close": "Got it, thanks!"
+            }
+        },
+        "personalInfo": {
+            "title": "Personal Information",
+            "displayName": "Display Name",
+            "email": "Email Identity",
+            "security": "Security Upgrade",
+            "leaveBlank": "(Leave blank to keep current)",
+            "newPassword": "New Master Password",
+            "confirmPassword": "Confirm Synchronization",
+            "updateButton": "Update Profile Matrix"
+        },
+        "alerts": {
+            "nameRequired": "Name Required",
+            "nameRequiredText": "Please enter your full name.",
+            "weakPassword": "Weak Password",
+            "weakPasswordText": "Password must be at least 6 characters long for your security.",
+            "mismatch": "Mismatch",
+            "mismatchText": "Passwords do not match. Please check again.",
+            "updated": "Profile Updated!",
+            "updatedText": "Your account information has been synchronized successfully.",
+            "failed": "Update Failed",
+            "failedText": "Something went wrong while updating your profile."
+        }
+    },
+    "designGallery": {
+        "title": "Design Gallery",
+        "subtitle": "Explore our exclusive collection of premium designs for your custom orders",
+        "searchPlaceholder": "Search designs...",
+        "allCategories": "All Categories",
+        "sortBy": {
+            "newest": "Newest First",
+            "priceLow": "Price: Low to High",
+            "priceHigh": "Price: High to Low"
+        },
+        "showing": "Showing",
+        "of": "of",
+        "designs": "designs",
+        "noDesigns": "No Designs Found",
+        "noDesignsText": "Try adjusting your filters or search query",
+        "startingAt": "Starting at"
+    },
+    "about": {
+        "hero": {
+            "since": "Since 2023",
+            "title": "Redefining Elegance",
+            "subtitle": "For The Modern Man.",
+            "description": "Topia is more than a brand; it's a movement towards authentic style, uncompromising quality, and timeless confidence.",
+            "exploreButton": "Explore Collection",
+            "journeyButton": "Our Journey"
+        },
+        "story": {
+            "badge": "The Beginning",
+            "title1": "It started with a",
+            "title2": "Simple Vision.",
+            "paragraph1": "Founded in 2023, Topia emerged from a frustration with the disposable nature of modern fashion. We wanted to create something that lasts—both in style and durability.",
+            "paragraph2": "What began as a small sketchpad in a garage has grown into a global community of men who refuse to settle for \"good enough.\" We obsess over every stitch, every fabric choice, and every button to ensure that when you wear Topia, you feel the difference immediately.",
+            "authenticity": "Authenticity",
+            "authenticityDesc": "Genuine materials, honest pricing.",
+            "craftsmanship": "Craftsmanship",
+            "craftsmanshipDesc": "Mastered by skilled artisans.",
+            "quote": "\"Fashion fades, only style remains the same.\"",
+            "quoteAuthor": "— Coco Chanel"
+        },
+        "stats": {
+            "customers": "Happy Gentlemen",
+            "designs": "Unique Designs",
+            "support": "Premium Support",
+            "satisfaction": "Satisfaction Rate"
+        },
+        "values": {
+            "badge": "Why Choose Us",
+            "title": "Built on Strong Foundations",
+            "quality": {
+                "title": "Obsessive Quality",
+                "desc": "We inspect every metric of our fabric to ensure it meets our rigorous standards. No loose threads, no cutting corners."
+            },
+            "customerFirst": {
+                "title": "Customer First",
+                "desc": "You are part of our family. Our dedicated team is available around the clock to ensure your experience is flawless."
+            },
+            "greener": {
+                "title": "A Greener Future",
+                "desc": "We are committed to sustainable practices, from ethically sourced cotton to biodegradable packaging."
+            }
+        },
+        "cta": {
+            "title": "Ready to Upgrade Your Style?",
+            "description": "Join thousands of men who have found their signature look with Topia.",
+            "button": "Start Shopping"
+        }
+    },
+    "contact": {
+        "hero": {
+            "support": "24/7 Support",
+            "title": "Let's Talk.",
+            "description": "Whether you have a question about sizing, materials, or just want to say hello, we are always here to listen."
+        },
+        "info": {
+            "title": "Get in touch",
+            "subtitle": "We'd love to hear from you. Our team is always here to chat.",
+            "chat": "Chat with us",
+            "chatDesc": "Our friendly team is here to help.",
+            "visit": "Visit us",
+            "visitDesc": "Come say hello at our office HQ.",
+            "call": "Call us",
+            "callDesc": "Mon-Fri from 8am to 5pm.",
+            "followUs": "Follow us"
+        },
+        "form": {
+            "title": "Send us a message",
+            "subtitle": "We usually respond within 24 hours.",
+            "nameLabel": "Your Name",
+            "emailLabel": "Email Address",
+            "subjectLabel": "Subject",
+            "messageLabel": "How can we help?",
+            "sendButton": "Send Message",
+            "sending": "Sending...",
+            "successTitle": "Message Sent Successfully! 🚀",
+            "successText": "We will get back to you shortly.",
+            "errorTitle": "Submission Failed",
+            "errorText": "Something went wrong. Please try again later."
+        },
+        "faq": {
+            "title": "Frequently Asked Questions",
+            "q1": "What is your return policy?",
+            "a1": "We offer a 30-day return policy for all unworn items in their original packaging. Simply contact our support team to initiate a return.",
+            "q2": "Do you ship internationally?",
+            "a2": "Yes! We ship to over 50 countries worldwide. Shipping times and costs vary depending on location.",
+            "q3": "How can I track my order?",
+            "a3": "Once your order is shipped, you will receive a tracking link via email. You can also track it from your profile dashboard."
+        }
+    },
+    "cart": {
+        "title": "Your Cart",
+        "item": "Items",
+        "empty": "Your Cart is Empty",
+        "continueShopping": "Continue Shopping",
+        "remove": "Remove item",
+        "couponCode": "Coupon Code",
+        "apply": "Apply",
+        "subtotal": "Subtotal",
+        "shipping": "Shipping",
+        "tax": "Tax",
+        "discount": "Discount",
+        "total": "Total",
+        "proceedToCheckout": "Proceed to Checkout",
+        "freeShipping": {
+            "add": "Add",
+            "more": "more for",
+            "freeShipping": "FREE SHIPPING",
+            "unlocked": "You've unlocked",
+            "celebrate": "🎉"
+        },
+        "custom": "Custom",
+        "securePayment": "Secure Payment",
+        "easyReturns": "Easy Returns",
+        "couponSuccess": "Coupon Applied Successfully! 🎉",
+        "invalidCoupon": "Invalid Coupon",
+        "invalidCouponText": "The coupon code you entered is invalid.",
+        "signInRequired": "Sign In Required",
+        "signInText": "Please sign in to proceed to checkout.",
+        "signInButton": "Sign In",
+        "cancel": "Cancel"
+    }
+}
