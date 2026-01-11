@@ -433,7 +433,22 @@
         "height": "الطول",
         "calculate": "احسب مقاسي",
         "result": "المقاس الموصى به",
-        "recalc": "احسب مرة أخرى"
+        "recalc": "احسب مرة أخرى",
+        "recommendedSize": "المقاس المُوصى به",
+        "perfectFit": "مقاس مثالي",
+        "chest": "الصدر",
+        "waist": "الخصر",
+        "length": "الطول",
+        "slim": "نحيف",
+        "regular": "عادي",
+        "broad": "عريض",
+        "hml": "طول/متوسط/كبير",
+        "normal": "عادي",
+        "athletic": "رياضي",
+        "shopSize": "تسوق المقاس",
+        "tip": "نصيحة",
+        "viewFullGuide": "عرض الدليل الكامل",
+        "bodyType": "نوع الجسم"
     },
     "profile": {
         "title": "نظرة عامة على الملف الشخصي",

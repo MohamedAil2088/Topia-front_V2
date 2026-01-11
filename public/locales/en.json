@@ -435,7 +435,22 @@
         "height": "Height",
         "calculate": "Calculate My Size",
         "result": "Your Recommended Size",
-        "recalc": "Calculate Again"
+        "recalc": "Calculate Again",
+        "recommendedSize": "Recommended Size",
+        "perfectFit": "Perfect Fit",
+        "chest": "Chest",
+        "waist": "Waist",
+        "length": "Length",
+        "slim": "Slim",
+        "regular": "Regular",
+        "broad": "Broad",
+        "hml": "Height/Medium/Large",
+        "normal": "Normal",
+        "athletic": "Athletic",
+        "shopSize": "Shop Size",
+        "tip": "Tip",
+        "viewFullGuide": "View Full Guide",
+        "bodyType": "Body Type"
     },
     "profile": {
         "title": "Profile Overview",
