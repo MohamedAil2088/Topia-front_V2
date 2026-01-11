@@ -3,6 +3,7 @@ import { FiStar, FiCheck, FiX, FiEye, FiEyeOff, FiTrash2, FiFilter, FiSearch } f
 import api from '../../utils/api';
 import Swal from 'sweetalert2';
 import { toast } from 'react-toastify';
+import { getLocalizedName } from '../../utils/getLocalizedName';
 
 interface Review {
     _id: string;
@@ -106,7 +107,7 @@ const AdminReviewsPage = () => {
 
     const filteredReviews = reviews.filter(review =>
         review.user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        review.product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        getLocalizedName(review.product.name).toLowerCase().includes(searchTerm.toLowerCase()) ||
         review.comment.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
@@ -188,7 +189,7 @@ const AdminReviewsPage = () => {
                                     <div className="w-24 h-24 flex-shrink-0 bg-gray-100 rounded-xl overflow-hidden">
                                         <img
                                             src={review.product.images[0]}
-                                            alt={review.product.name}
+                                            alt={getLocalizedName(review.product.name)}
                                             className="w-full h-full object-cover"
                                         />
                                     </div>
@@ -197,7 +198,7 @@ const AdminReviewsPage = () => {
                                     <div className="flex-1">
                                         {/* Product & User Info */}
                                         <div className="mb-3">
-                                            <h3 className="font-bold text-gray-900 mb-1">{review.product.name}</h3>
+                                            <h3 className="font-bold text-gray-900 mb-1">{getLocalizedName(review.product.name)}</h3>
                                             <p className="text-sm text-gray-500">
                                                 By: <strong>{review.user.name}</strong> ({review.user.email})
                                             </p>

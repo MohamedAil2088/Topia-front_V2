@@ -7,6 +7,7 @@ import Button from '../../../components/Button';
 import Loader from '../../../components/Loader';
 import { FiUploadCloud, FiX, FiSave, FiArrowLeft, FiPackage, FiDollarSign, FiImage, FiEdit3 } from 'react-icons/fi';
 import api from '../../../utils/api';
+import { getLocalizedName } from '../../../utils/getLocalizedName';
 
 const ProductEditPage = () => {
     const { id } = useParams<{ id: string }>();
@@ -66,7 +67,7 @@ const ProductEditPage = () => {
 
     useEffect(() => {
         if (isEditMode && product) {
-            setName(product.name);
+            setName(getLocalizedName(product.name));
             setPrice(product.price.toString());
             setDescription(product.description);
             const catId = typeof product.category === 'object' ? (product.category as any)._id : product.category;
@@ -299,7 +300,7 @@ const ProductEditPage = () => {
                                 <option value="">Select Category</option>
                                 {categories.map((cat) => (
                                     <option key={cat._id} value={cat._id}>
-                                        {cat.name}
+                                        {getLocalizedName(cat.name)}
                                     </option>
                                 ))}
                             </select>
@@ -432,8 +433,8 @@ const ProductEditPage = () => {
                                 type="button"
                                 onClick={() => toggleSize(size)}
                                 className={`px-6 py-3 rounded-xl font-black text-sm transition-all transform hover:scale-105 border-2 ${sizes.includes(size)
-                                        ? 'bg-indigo-600 text-white border-indigo-600 shadow-lg'
-                                        : 'bg-white text-gray-700 border-gray-300 hover:border-indigo-400'
+                                    ? 'bg-indigo-600 text-white border-indigo-600 shadow-lg'
+                                    : 'bg-white text-gray-700 border-gray-300 hover:border-indigo-400'
                                     }`}
                             >
                                 {size}
@@ -469,8 +470,8 @@ const ProductEditPage = () => {
                                 type="button"
                                 onClick={() => toggleColor(color.name)}
                                 className={`group relative p-4 rounded-xl transition-all transform hover:scale-105 border-3 ${colors.includes(color.name)
-                                        ? 'border-pink-600 shadow-xl ring-4 ring-pink-100'
-                                        : 'border-gray-200 hover:border-pink-300'
+                                    ? 'border-pink-600 shadow-xl ring-4 ring-pink-100'
+                                    : 'border-gray-200 hover:border-pink-300'
                                     }`}
                             >
                                 <div
