@@ -94,8 +94,14 @@ const CategoryListPage = () => {
             }
 
             const { data } = await api.post('/categories', {
-                name: newName.trim(),
-                description: newDescription.trim() || undefined,
+                name: {
+                    en: newName.trim(),
+                    ar: newName.trim()  // Using same name for both languages
+                },
+                description: {
+                    en: newDescription.trim() || undefined,
+                    ar: newDescription.trim() || undefined
+                },
                 image: imageUrl || undefined
             });
 
@@ -158,8 +164,14 @@ const CategoryListPage = () => {
             }
 
             const { data } = await api.put(`/categories/${id}`, {
-                name: editName.trim(),
-                description: editDescription.trim() || undefined,
+                name: {
+                    en: editName.trim(),
+                    ar: editName.trim()  // Using same name for both languages
+                },
+                description: {
+                    en: editDescription.trim() || undefined,
+                    ar: editDescription.trim() || undefined
+                },
                 image: imageUrl || undefined
             });
 
