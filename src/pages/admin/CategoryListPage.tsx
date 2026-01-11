@@ -32,6 +32,14 @@ const CategoryListPage = () => {
         if (typeof name === 'string') return name;
         return name[i18n.language] || name.en || Object.values(name)[0] || 'Category';
     };
+
+    // Helper to get translated description safely
+    const getDescription = (desc: any) => {
+        if (!desc) return '';
+        if (typeof desc === 'string') return desc;
+        return desc[i18n.language] || desc.en || Object.values(desc)[0] || '';
+    };
+
     const [newImage, setNewImage] = useState<File | null>(null);
     const [newImagePreview, setNewImagePreview] = useState<string>('');
     const [submitting, setSubmitting] = useState(false);
@@ -130,7 +138,7 @@ const CategoryListPage = () => {
     const startEdit = (category: Category) => {
         setEditingId(category._id);
         setEditName(getName(category.name));
-        setEditDescription(category.description || '');
+        setEditDescription(getDescription(category.description));
         setEditImagePreview(category.image || '');
     };
 
@@ -500,7 +508,7 @@ const CategoryListPage = () => {
                                                             </code>
                                                         </td>
                                                         <td className="px-6 py-4 text-sm text-gray-600 max-w-xs">
-                                                            {cat.description || <span className="text-gray-400 italic">No description</span>}
+                                                            {getDescription(cat.description) || <span className="text-gray-400 italic">No description</span>}
                                                         </td>
                                                         <td className="px-6 py-4 text-right">
                                                             <div className="flex justify-end gap-2">
