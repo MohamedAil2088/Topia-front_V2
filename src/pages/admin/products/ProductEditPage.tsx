@@ -125,7 +125,9 @@ const ProductEditPage = () => {
             };
 
             const { data } = await api.post('/upload', formData, config);
-            setImages((prev) => [...prev, data]);
+            // Extract URL from response (data.url or data.imagePath)
+            const imageUrl = data.url || data.imagePath || data;
+            setImages((prev) => [...prev, imageUrl]);
             setUploading(false);
         } catch (error) {
             console.error(error);
