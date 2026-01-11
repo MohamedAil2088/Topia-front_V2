@@ -280,8 +280,7 @@ const ProductDetailsPage = () => {
                             <span className="text-xs text-gray-500 uppercase tracking-widest font-bold">
                                 {(() => {
                                     const catName = typeof product.category === 'object' ? product.category?.name : product.category;
-                                    const safeCatName = String(catName || 'Men');
-                                    return t(`categories.${safeCatName.toLowerCase()}`, safeCatName);
+                                    return getLocalizedName(catName, 'Men');
                                 })()}
                             </span>
                         </div>

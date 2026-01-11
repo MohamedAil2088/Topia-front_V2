@@ -9,6 +9,7 @@ import Loader from '../components/Loader';
 import ProductCard from '../components/ProductCard';
 import SizeGuide from '../components/SizeGuide';
 import CustomDesignSection from '../components/CustomDesignSection';
+import { getLocalizedName } from '../utils/getLocalizedName';
 
 const HomePage = () => {
     const { t } = useTranslation();
@@ -417,12 +418,12 @@ const HomePage = () => {
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent group-hover:from-black/60 transition-all z-10" />
                                     <img
                                         src={cat.image || "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=800"}
-                                        alt={cat.name}
+                                        alt={getLocalizedName(cat.name)}
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 flex flex-col items-center justify-end pb-12 z-20">
                                         <h3 className="text-4xl font-black text-white mb-4 tracking-tight group-hover:-translate-y-2 transition-transform duration-300">
-                                            {cat.name?.ar && cat.name?.en ? (i18n.language === 'ar' ? cat.name.ar : cat.name.en) : String(t(`categories.${cat.name?.toLowerCase()}`, cat.name))}
+                                            {getLocalizedName(cat.name)}
                                         </h3>
                                         <span className="px-8 py-3 bg-white text-gray-900 rounded-full text-sm font-black opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-xl">
                                             {t('home.categories.exploreCollection')} →

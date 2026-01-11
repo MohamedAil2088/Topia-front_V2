@@ -85,8 +85,7 @@ const RelatedProducts: React.FC<RelatedProductsProps> = ({ productId }) => {
                                 <span className="text-xs font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
                                     {(() => {
                                         const catName = typeof product.category === 'object' ? product.category?.name : product.category;
-                                        const safeCatName = String(catName || 'Men');
-                                        return t(`categories.${safeCatName.toLowerCase()}`, safeCatName);
+                                        return getLocalizedName(catName, 'Men');
                                     })()}
                                 </span>
                             </div>

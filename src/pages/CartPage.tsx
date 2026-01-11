@@ -8,6 +8,7 @@ import { FiTrash2, FiArrowLeft, FiTag, FiCheckCircle, FiXCircle, FiTruck, FiLock
 import { useCurrency } from '../context/CurrencyContext';
 import api from '../utils/api';
 import Swal from 'sweetalert2';
+import { getLocalizedName } from '../utils/getLocalizedName';
 
 const CartPage = () => {
     const { t } = useTranslation();
@@ -178,7 +179,7 @@ const CartPage = () => {
                                         <Link to={`/product/${item._id}`} className="block w-full sm:w-40 h-48 bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden flex-shrink-0 relative">
                                             <img
                                                 src={item.image}
-                                                alt={item.name}
+                                                alt={getLocalizedName(item.name)}
                                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                             />
                                         </Link>
@@ -194,12 +195,12 @@ const CartPage = () => {
                                                         <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">
                                                             {(() => {
                                                                 const catName = typeof item.category === 'object' ? item.category?.name : item.category;
-                                                                return catName || 'Collection';
+                                                                return getLocalizedName(catName, 'Collection');
                                                             })()}
                                                         </span>
                                                     </div>
                                                     <Link to={`/product/${item._id}`} className="block text-xl font-black text-gray-900 dark:text-white mb-3 hover:underline decoration-2 underline-offset-4">
-                                                        {item.name}
+                                                        {getLocalizedName(item.name)}
                                                     </Link>
 
                                                     {/* Attributes */}
