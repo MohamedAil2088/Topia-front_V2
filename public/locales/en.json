@@ -450,7 +450,8 @@
         "shopSize": "Shop Size",
         "tip": "Tip",
         "viewFullGuide": "View Full Guide",
-        "bodyType": "Body Type"
+        "bodyType": "Body Type",
+        "bmi": "BMI"
     },
     "profile": {
         "title": "Profile Overview",
