@@ -3,6 +3,7 @@ import { FiUpload, FiX, FiCheck, FiLayout } from 'react-icons/fi';
 import { toast } from 'react-toastify';
 import Button from './Button';
 import DesignSelectionModal from './DesignSelectionModal';
+import getLocalizedName from '../utils/getLocalizedName';
 
 interface CustomizationSectionProps {
     product: any;
@@ -309,11 +310,11 @@ const CustomizationSection = ({ product, onAddToCart }: CustomizationSectionProp
                                     <div className="flex items-center gap-4">
                                         <img
                                             src={selectedDesign.image}
-                                            alt={selectedDesign.name}
+                                            alt={getLocalizedName(selectedDesign.name)}
                                             className="w-24 h-24 object-cover rounded-lg"
                                         />
                                         <div className="flex-1">
-                                            <h4 className="font-bold text-gray-900 dark:text-white">{selectedDesign.name}</h4>
+                                            <h4 className="font-bold text-gray-900 dark:text-white">{getLocalizedName(selectedDesign.name)}</h4>
                                             <p className="text-sm text-gray-500 mt-1">{selectedDesign.description}</p>
                                             <p className="text-lg font-bold text-purple-600 mt-2">+{selectedDesign.price} EGP</p>
                                         </div>

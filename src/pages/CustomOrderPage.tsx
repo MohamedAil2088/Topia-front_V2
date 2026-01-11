@@ -6,6 +6,7 @@ import { useAppSelector } from '../hooks/useRedux';
 import api from '../utils/api';
 import Swal from 'sweetalert2';
 import Loader from '../components/Loader';
+import getLocalizedName from '../utils/getLocalizedName';
 
 interface Design {
     _id: string;
@@ -171,13 +172,13 @@ const CustomOrderPage = () => {
                                                 key={design._id}
                                                 onClick={() => setSelectedDesign(design)}
                                                 className={`relative cursor-pointer rounded-xl overflow-hidden border-4 transition-all transform hover:scale-105 ${selectedDesign?._id === design._id
-                                                        ? 'border-blue-600 ring-4 ring-blue-200'
-                                                        : 'border-gray-200 hover:border-blue-300'
+                                                    ? 'border-blue-600 ring-4 ring-blue-200'
+                                                    : 'border-gray-200 hover:border-blue-300'
                                                     }`}
                                             >
                                                 <img
                                                     src={design.image}
-                                                    alt={design.name}
+                                                    alt={getLocalizedName(design.name)}
                                                     className="w-full h-40 object-cover"
                                                 />
                                                 {selectedDesign?._id === design._id && (
@@ -186,7 +187,7 @@ const CustomOrderPage = () => {
                                                     </div>
                                                 )}
                                                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
-                                                    <p className="text-white font-bold text-sm">{design.name}</p>
+                                                    <p className="text-white font-bold text-sm">{getLocalizedName(design.name)}</p>
                                                     <p className="text-white/90 text-xs">{design.price} EGP</p>
                                                 </div>
                                             </div>
@@ -305,10 +306,10 @@ const CustomOrderPage = () => {
                                             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                                                 <img
                                                     src={selectedDesign.image}
-                                                    alt={selectedDesign.name}
+                                                    alt={getLocalizedName(selectedDesign.name)}
                                                     className="w-full h-32 object-cover rounded-lg mb-3"
                                                 />
-                                                <p className="font-bold text-lg">{selectedDesign.name}</p>
+                                                <p className="font-bold text-lg">{getLocalizedName(selectedDesign.name)}</p>
                                             </div>
 
                                             <div className="space-y-2 text-sm">

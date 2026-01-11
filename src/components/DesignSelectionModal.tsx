@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { FiX, FiSearch, FiCheck } from 'react-icons/fi';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import getLocalizedName from '../utils/getLocalizedName';
 
 interface Design {
     _id: string;
@@ -64,7 +65,7 @@ const DesignSelectionModal = ({ isOpen, onClose, onSelect }: DesignSelectionModa
         // Filter by search query
         if (searchQuery.trim()) {
             filtered = filtered.filter(design =>
-                design.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                getLocalizedName(design.name).toLowerCase().includes(searchQuery.toLowerCase()) ||
                 design.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 design.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
             );
@@ -177,7 +178,7 @@ const DesignSelectionModal = ({ isOpen, onClose, onSelect }: DesignSelectionModa
                                         <div className="aspect-square bg-gray-100">
                                             <img
                                                 src={design.image}
-                                                alt={design.name}
+                                                alt={getLocalizedName(design.name)}
                                                 className="w-full h-full object-cover"
                                             />
                                         </div>
@@ -191,7 +192,7 @@ const DesignSelectionModal = ({ isOpen, onClose, onSelect }: DesignSelectionModa
 
                                         {/* Info */}
                                         <div className="p-3 bg-white">
-                                            <h3 className="font-semibold text-gray-900 truncate">{design.name}</h3>
+                                            <h3 className="font-semibold text-gray-900 truncate">{getLocalizedName(design.name)}</h3>
                                             <p className="text-sm text-gray-500 mt-1">{design.category}</p>
                                             <p className="text-lg font-bold text-blue-600 mt-2">
                                                 {design.price} جنيه
@@ -224,7 +225,7 @@ const DesignSelectionModal = ({ isOpen, onClose, onSelect }: DesignSelectionModa
                         <div className="text-gray-600">
                             {selectedDesign ? (
                                 <div>
-                                    <p className="font-semibold">التصميم المختار: {selectedDesign.name}</p>
+                                    <p className="font-semibold">التصميم المختار: {getLocalizedName(selectedDesign.name)}</p>
                                     <p className="text-sm">سيتم إضافة {selectedDesign.price} جنيه لسعر المنتج</p>
                                 </div>
                             ) : (

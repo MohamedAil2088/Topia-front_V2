@@ -466,10 +466,10 @@ const ProductEditPage = () => {
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
                         {availableColors.map((color) => (
                             <button
-                                key={color.name}
+                                key={getLocalizedName(color.name)}
                                 type="button"
-                                onClick={() => toggleColor(color.name)}
-                                className={`group relative p-4 rounded-xl transition-all transform hover:scale-105 border-3 ${colors.includes(color.name)
+                                onClick={() => toggleColor(String(getLocalizedName(color.name)))}
+                                className={`group relative p-4 rounded-xl transition-all transform hover:scale-105 border-3 ${colors.includes(String(getLocalizedName(color.name)))
                                     ? 'border-pink-600 shadow-xl ring-4 ring-pink-100'
                                     : 'border-gray-200 hover:border-pink-300'
                                     }`}
@@ -478,8 +478,8 @@ const ProductEditPage = () => {
                                     className="w-full aspect-square rounded-lg mb-2 shadow-md"
                                     style={{ backgroundColor: color.value }}
                                 />
-                                <p className="text-xs font-black text-gray-700 text-center">{color.name}</p>
-                                {colors.includes(color.name) && (
+                                <p className="text-xs font-black text-gray-700 text-center">{getLocalizedName(color.name)}</p>
+                                {colors.includes(String(getLocalizedName(color.name))) && (
                                     <div className="absolute top-2 right-2 bg-pink-600 text-white rounded-full p-1 shadow-lg">
                                         <FiX size={12} />
                                     </div>

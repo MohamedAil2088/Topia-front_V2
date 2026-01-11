@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import api from '../../utils/api';
 import Button from '../../components/Button';
 import Loader from '../../components/Loader';
+import { getLocalizedName } from '../../utils/getLocalizedName';
 
 const AdminCustomOrdersPage = () => {
     const [orders, setOrders] = useState<any[]>([]);
@@ -174,11 +175,11 @@ const AdminCustomOrdersPage = () => {
                                         <div className="flex items-center gap-3">
                                             <img
                                                 src={order.product?.images[0]}
-                                                alt={order.product?.name}
+                                                alt={getLocalizedName(order.product?.name)}
                                                 className="w-12 h-12 object-cover rounded-lg"
                                             />
                                             <div>
-                                                <p className="font-semibold text-sm">{order.product?.name}</p>
+                                                <p className="font-semibold text-sm">{getLocalizedName(order.product?.name)}</p>
                                                 <p className="text-xs text-gray-500">
                                                     {order.size} | {order.color}
                                                 </p>
@@ -281,7 +282,7 @@ const AdminCustomOrdersPage = () => {
                                 <div>
                                     <h3 className="font-black text-gray-900 mb-3">Product Details</h3>
                                     <div className="space-y-2 text-sm">
-                                        <p><span className="text-gray-500">Product:</span> <span className="font-semibold">{selectedOrder.product?.name}</span></p>
+                                        <p><span className="text-gray-500">Product:</span> <span className="font-semibold">{getLocalizedName(selectedOrder.product?.name)}</span></p>
                                         <p><span className="text-gray-500">Size:</span> <span className="font-semibold">{selectedOrder.size}</span></p>
                                         <p><span className="text-gray-500">Color:</span> <span className="font-semibold">{selectedOrder.color}</span></p>
                                         <p><span className="text-gray-500">Quantity:</span> <span className="font-semibold">{selectedOrder.quantity}</span></p>
