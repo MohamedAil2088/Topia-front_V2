@@ -26,8 +26,21 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     const isInWishlist = wishlistItems.some(item => item && item._id === product._id);
 
     // Get front and back images
-    const frontImage = product.images && product.images.length > 0 ? product.images[0] : 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="300" height="300"%3E%3Crect fill="%23ddd" width="300" height="300"/%3E%3Ctext fill="%23aaa" font-family="sans-serif" font-size="24" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3ENo Image%3C/text%3E%3C/svg%3E';
-    const backImage = product.images && product.images.length > 1 ? product.images[1] : frontImage;
+    // Helper to handle image URLs
+    const getImageUrl = (url: string) => {
+        if (!url) return '';
+        if (url.startsWith('http') || url.startsWith('data:')) return url;
+        return `http://localhost:5000${url}`;
+    };
+
+    // Get front and back images
+    const frontImage = product.images && product.images.length > 0
+        ? getImageUrl(product.images[0])
+        : 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="300" height="300"%3E%3Crect fill="%23ddd" width="300" height="300"/%3E%3Ctext fill="%23aaa" font-family="sans-serif" font-size="24" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3ENo Image%3C/text%3E%3C/svg%3E';
+
+    const backImage = product.images && product.images.length > 1
+        ? getImageUrl(product.images[1])
+        : frontImage;
 
     const handleAddToCart = (e: React.MouseEvent) => {
         e.preventDefault();

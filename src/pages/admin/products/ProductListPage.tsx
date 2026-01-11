@@ -31,6 +31,14 @@ const ProductListPage = () => {
         return name[i18n.language] || name.en || Object.values(name)[0] || 'Product';
     };
 
+    // Helper for image URLs
+    const BASE_URL = 'http://localhost:5000';
+    const getImageUrl = (url: string) => {
+        if (!url) return '';
+        if (url.startsWith('http') || url.startsWith('data:') || url.startsWith('https:')) return url;
+        return `${BASE_URL}${url}`;
+    };
+
     // Filter products based on search and stock filter
     const filteredProducts = useMemo(() => {
         return products.filter(product => {
@@ -237,7 +245,7 @@ const ProductListPage = () => {
                                                 <div className="flex items-center gap-4">
                                                     <div className="w-16 h-16 bg-gray-100 rounded-xl overflow-hidden border-2 border-gray-200 group-hover:border-primary-300 transition-all shadow-sm group-hover:shadow-lg">
                                                         <img
-                                                            src={product.images && product.images.length > 0 ? product.images[0] : 'https://via.placeholder.com/64'}
+                                                            src={product.images && product.images.length > 0 ? getImageUrl(product.images[0]) : 'https://via.placeholder.com/64'}
                                                             alt={getName(product.name)}
                                                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                                                         />

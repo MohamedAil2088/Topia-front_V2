@@ -14,6 +14,9 @@ const ProductEditPage = () => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
+    // Base URL for local images (fallback)
+    const BASE_URL = 'http://localhost:5000';
+
     // State for form
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
@@ -541,7 +544,7 @@ const ProductEditPage = () => {
                                     className="relative aspect-square bg-gray-100 rounded-2xl overflow-hidden border-3 border-gray-200 group hover:border-primary-500 transition-all shadow-sm hover:shadow-lg"
                                 >
                                     <img
-                                        src={img}
+                                        src={img.startsWith('http') ? img : `${BASE_URL}${img}`}
                                         alt={`Product ${idx + 1}`}
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                                     />

@@ -202,6 +202,14 @@ const ProductDetailsPage = () => {
 
     if (!product) return null;
 
+    // Helper for image URLs
+    const BASE_URL = 'http://localhost:5000';
+    const getImageUrl = (url: string) => {
+        if (!url) return '';
+        if (url.startsWith('http') || url.startsWith('data:') || url.startsWith('/placeholder')) return url;
+        return `${BASE_URL}${url}`;
+    };
+
     return (
         <div className="bg-white dark:bg-[#1a1a1a] min-h-screen pb-20 transition-colors duration-300 pt-20">
             {/* Breadcrumb */}
@@ -222,7 +230,7 @@ const ProductDetailsPage = () => {
                         {/* Main Image with Zoom Effect */}
                         <div className="relative aspect-[3/4] bg-gray-100 rounded-3xl overflow-hidden group">
                             <img
-                                src={mainImage || PLACEHOLDER_IMG}
+                                src={getImageUrl(mainImage) || PLACEHOLDER_IMG}
                                 alt={getLocalizedName(product.name)}
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 onError={(e) => {
@@ -254,8 +262,8 @@ const ProductDetailsPage = () => {
                                             }`}
                                     >
                                         <img
-                                            src={img || PLACEHOLDER_IMG}
-                                            alt=""
+                                            src={getImageUrl(img)}
+                                            alt={`Thumbnail ${index + 1}`}
                                             className="w-full h-full object-cover"
                                             onError={(e) => { (e.target as HTMLImageElement).src = PLACEHOLDER_IMG; }}
                                         />
