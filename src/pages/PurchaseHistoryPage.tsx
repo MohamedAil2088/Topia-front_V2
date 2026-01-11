@@ -7,6 +7,7 @@ import Loader from '../components/Loader';
 import { useAppDispatch, useAppSelector } from '../hooks/useRedux';
 import { addToCart } from '../redux/slices/cartSlice';
 import Swal from 'sweetalert2';
+import { getLocalizedName } from '../utils/getLocalizedName';
 
 interface PurchasedProduct {
     _id: string;
@@ -53,7 +54,7 @@ const PurchaseHistoryPage = () => {
     const handleBuyAgain = (product: PurchasedProduct) => {
         dispatch(addToCart({
             _id: product._id,
-            name: product.name,
+            name: getLocalizedName(product.name),
             image: product.image,
             price: product.price,
             stock: 10,
@@ -63,7 +64,7 @@ const PurchaseHistoryPage = () => {
         Swal.fire({
             icon: 'success',
             title: t('purchaseHistory.addedToCart.title'),
-            text: t('purchaseHistory.addedToCart.text', { name: product.name }),
+            text: t('purchaseHistory.addedToCart.text', { name: getLocalizedName(product.name) }),
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
@@ -143,7 +144,7 @@ const PurchaseHistoryPage = () => {
                                             <div className="relative aspect-[4/5] overflow-hidden">
                                                 <img
                                                     src={product.image || PLACEHOLDER_IMG}
-                                                    alt={product.name}
+                                                    alt={getLocalizedName(product.name)}
                                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                                     onError={(e) => {
                                                         const target = e.target as HTMLImageElement;
@@ -161,7 +162,7 @@ const PurchaseHistoryPage = () => {
                                             </div>
                                             <div className="p-8 flex-grow flex flex-col">
                                                 <Link to={`/product/${product._id}`} className="text-xl font-black text-gray-900 hover:text-primary-600 transition-colors mb-2 block truncate">
-                                                    {product.name}
+                                                    {getLocalizedName(product.name)}
                                                 </Link>
                                                 <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-4">{t('purchaseHistory.originalPurchase')}</p>
 

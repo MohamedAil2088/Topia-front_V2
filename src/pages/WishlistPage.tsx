@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { FiTrash2, FiShoppingBag, FiHeart } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 import Swal from 'sweetalert2';
+import { getLocalizedName } from '../utils/getLocalizedName';
 
 const WishlistPage: React.FC = () => {
     const { t } = useTranslation();
@@ -27,7 +28,7 @@ const WishlistPage: React.FC = () => {
     const handleMoveToCart = (product: any) => {
         dispatch(addToCart({
             _id: product._id,
-            name: product.name,
+            name: getLocalizedName(product.name),
             price: product.price,
             image: product.images[0],
             stock: product.stock,
@@ -77,7 +78,7 @@ const WishlistPage: React.FC = () => {
                             <div className="relative aspect-[4/5] overflow-hidden shrink-0">
                                 <img
                                     src={item.images[0]}
-                                    alt={item.name}
+                                    alt={getLocalizedName(item.name)}
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
                                 <button
@@ -91,8 +92,8 @@ const WishlistPage: React.FC = () => {
 
                             <div className="p-6 flex flex-col flex-1">
                                 <Link to={`/product/${item._id}`}>
-                                    <h3 className="font-bold text-xl text-gray-900 mb-1 group-hover:text-primary-600 transition-colors uppercase tracking-tight line-clamp-2 h-14" title={item.name}>
-                                        {item.name}
+                                    <h3 className="font-bold text-xl text-gray-900 mb-1 group-hover:text-primary-600 transition-colors uppercase tracking-tight line-clamp-2 h-14" title={getLocalizedName(item.name)}>
+                                        {getLocalizedName(item.name)}
                                     </h3>
                                 </Link>
                                 <div className="flex items-center justify-between mb-6">

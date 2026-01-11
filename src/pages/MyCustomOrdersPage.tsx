@@ -5,6 +5,7 @@ import { FiPackage, FiClock, FiCheck, FiX, FiEye, FiUser, FiMapPin, FiChevronRig
 import api from '../utils/api';
 import Loader from '../components/Loader';
 import { useAppSelector } from '../hooks/useRedux';
+import { getLocalizedName } from '../utils/getLocalizedName';
 
 const MyCustomOrdersPage = () => {
     const [orders, setOrders] = useState<any[]>([]);
@@ -173,7 +174,7 @@ const MyCustomOrdersPage = () => {
                                                 <div className="w-24 h-24 rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 flex-shrink-0">
                                                     <img
                                                         src={order.product?.images?.[0] || PLACEHOLDER_IMG}
-                                                        alt={order.product?.name}
+                                                        alt={getLocalizedName(order.product?.name)}
                                                         className="w-full h-full object-cover"
                                                         onError={(e) => {
                                                             const target = e.target as HTMLImageElement;
@@ -185,7 +186,7 @@ const MyCustomOrdersPage = () => {
                                                 </div>
                                                 <div className="flex-1">
                                                     <h4 className="font-bold text-gray-900 text-lg mb-1">
-                                                        {order.product?.name}
+                                                        {getLocalizedName(order.product?.name)}
                                                     </h4>
                                                     <div className="flex flex-wrap gap-2 mb-3">
                                                         <span className="px-2 py-1 bg-gray-50 border border-gray-100 rounded text-xs font-bold text-gray-600">

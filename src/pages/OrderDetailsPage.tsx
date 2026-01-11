@@ -8,6 +8,7 @@ import api from '../utils/api';
 import Swal from 'sweetalert2';
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
+import { getLocalizedName } from '../utils/getLocalizedName';
 
 const OrderDetailsPage = () => {
     const { t } = useTranslation();
@@ -77,7 +78,7 @@ const OrderDetailsPage = () => {
 
         // Table
         const tableRows = order.orderItems.map((item: any) => [
-            item.name,
+            getLocalizedName(item.name),
             item.qty,
             `${item.price.toFixed(2)} EGP`,
             `${(item.qty * item.price).toFixed(2)} EGP`
@@ -196,7 +197,7 @@ const OrderDetailsPage = () => {
                                     <div className="w-20 h-24 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0 border border-gray-200">
                                         <img
                                             src={item.image || PLACEHOLDER_IMG}
-                                            alt={item.name}
+                                            alt={getLocalizedName(item.name)}
                                             className="w-full h-full object-cover"
                                             onError={(e) => {
                                                 const target = e.target as HTMLImageElement;
@@ -208,7 +209,7 @@ const OrderDetailsPage = () => {
                                     </div>
                                     <div className="flex-grow">
                                         <Link to={`/product/${item.product}`} className="font-bold text-gray-900 hover:text-primary-600 transition-colors block mb-1">
-                                            {item.name}
+                                            {getLocalizedName(item.name)}
                                         </Link>
                                         <div className="text-sm text-gray-500 mb-2">
                                             {item.size} / {item.color}
