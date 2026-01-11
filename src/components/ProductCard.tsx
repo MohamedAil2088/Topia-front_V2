@@ -9,6 +9,7 @@ import QuickViewModal from './QuickViewModal';
 import { addToCart } from '../redux/slices/cartSlice';
 import { addToWishlist, removeFromWishlist } from '../redux/slices/wishlistSlice';
 import Swal from 'sweetalert2';
+import { getLocalizedName } from '../utils/getLocalizedName';
 
 interface ProductCardProps {
     product: any;
@@ -32,7 +33,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         e.preventDefault();
         dispatch(addToCart({
             _id: product._id,
-            name: product.name,
+            name: getLocalizedName(product.name),
             image: product.images && product.images.length > 0 ? product.images[0] : '',
             price: product.price,
             stock: product.stock,
@@ -55,8 +56,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         // إضافة المنتج الكامل للـ Wishlist (local storage)
         dispatch(addToWishlist({
             _id: product._id,
-            name: product.name,
-            description: product.description,
+            name: getLocalizedName(product.name),
+            description: getLocalizedName(product.description, ''),
             price: product.price,
             images: product.images,
             category: product.category,
@@ -110,7 +111,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 {/* Front Image */}
                 <img
                     src={frontImage}
-                    alt={product.name}
+                    alt={getLocalizedName(product.name)}
                     loading="lazy"
                     className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${isHovered ? 'opacity-0 scale-110' : 'opacity-100 scale-100'
                         }`}
@@ -119,7 +120,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 {/* Back Image (shows on hover) */}
                 <img
                     src={backImage}
-                    alt={`${product.name} - Back`}
+                    alt={`${getLocalizedName(product.name)} - Back`}
                     loading="lazy"
                     className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${isHovered ? 'opacity-100 scale-110' : 'opacity-0 scale-100'
                         }`}
@@ -169,7 +170,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                             ? (product.category.name[i18n.language] || product.category.name.en || 'Topia Collection')
                             : (product.category?.name || 'Topia Collection')}
                     </p>
-                    <h3 className="font-bold text-gray-900 mb-2 truncate group-hover:text-accent-600 transition-colors">{product.name}</h3>
+                    <h3 className="font-bold text-gray-900 mb-2 truncate group-hover:text-accent-600 transition-colors">{getLocalizedName(product.name)}</h3>
                 </Link>
                 <div className="flex justify-between items-center">
                     <span className="font-bold text-primary-900 text-lg">{formatPrice(product.price)}</span>

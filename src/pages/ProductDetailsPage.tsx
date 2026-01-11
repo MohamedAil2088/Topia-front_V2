@@ -12,6 +12,7 @@ import api from '../utils/api';
 import Swal from 'sweetalert2';
 import RelatedProducts from '../components/RelatedProducts';
 import CustomizationSection from '../components/CustomizationSection';
+import { getLocalizedName } from '../utils/getLocalizedName';
 
 // Loader Component (Inline fallback if missing)
 const Loader = ({ size = 'md' }: { size?: string }) => (
@@ -110,7 +111,7 @@ const ProductDetailsPage = () => {
 
         dispatch(addToCart({
             _id: product._id,
-            name: product.name,
+            name: getLocalizedName(product.name),
             image: product.images && product.images.length > 0 ? product.images[0] : (product.image || '/placeholder-image.jpg'),
             price: product.price || 0,
             stock: product.stock || 0, // Using 'stock' as verified in type definition
@@ -133,7 +134,7 @@ const ProductDetailsPage = () => {
 
         Toast.fire({
             icon: 'success',
-            title: `${product.name} added to cart`
+            title: `${getLocalizedName(product.name)} added to cart`
         });
     };
 
@@ -210,7 +211,7 @@ const ProductDetailsPage = () => {
                     <span className="mx-2">/</span>
                     <Link to="/shop" className="hover:text-primary-900 dark:hover:text-white">{t('navbar.shop')}</Link>
                     <span className="mx-2">/</span>
-                    <span className="text-gray-900 dark:text-white font-medium truncate">{product.name}</span>
+                    <span className="text-gray-900 dark:text-white font-medium truncate">{getLocalizedName(product.name)}</span>
                 </div>
             </div>
 
@@ -222,7 +223,7 @@ const ProductDetailsPage = () => {
                         <div className="relative aspect-[3/4] bg-gray-100 rounded-3xl overflow-hidden group">
                             <img
                                 src={mainImage || PLACEHOLDER_IMG}
-                                alt={product.name}
+                                alt={getLocalizedName(product.name)}
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 onError={(e) => {
                                     const target = e.target as HTMLImageElement;
@@ -285,7 +286,7 @@ const ProductDetailsPage = () => {
                             </span>
                         </div>
 
-                        <h1 className="text-3xl md:text-4xl font-bold font-display text-primary-900 mb-4">{product.name}</h1>
+                        <h1 className="text-3xl md:text-4xl font-bold font-display text-primary-900 mb-4">{getLocalizedName(product.name)}</h1>
 
                         <div className="flex items-center gap-4 mb-3">
                             <span className="text-3xl font-bold text-gray-900">{formatPrice(product.price || 0)}</span>
@@ -325,7 +326,7 @@ const ProductDetailsPage = () => {
                                 onAddToCart={(data: any) => {
                                     const customCartItem = {
                                         _id: product._id,
-                                        name: product.name,
+                                        name: getLocalizedName(product.name),
                                         image: product.images[0],
                                         price: data.totalPrice,
                                         qty: 1,
@@ -661,9 +662,9 @@ const RecentlyViewed = ({ currentId }: { currentId: string }) => {
                 {items.map((item) => (
                     <Link key={item._id} to={`/products/${item._id}`} className="group block">
                         <div className="aspect-[3/4] rounded-xl overflow-hidden bg-gray-100 mb-3 shadow-sm group-hover:shadow-md transition-all">
-                            <img src={item.images && item.images[0] ? item.images[0] : '/placeholder-image.jpg'} alt={item.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                            <img src={item.images && item.images[0] ? item.images[0] : '/placeholder-image.jpg'} alt={getLocalizedName(item.name)} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                         </div>
-                        <h3 className="text-sm font-bold text-primary-900 group-hover:text-primary-600 truncate">{item.name}</h3>
+                        <h3 className="text-sm font-bold text-primary-900 group-hover:text-primary-600 truncate">{getLocalizedName(item.name)}</h3>
                         <p className="text-sm text-gray-500">{item.price} EGP</p>
                     </Link>
                 ))}

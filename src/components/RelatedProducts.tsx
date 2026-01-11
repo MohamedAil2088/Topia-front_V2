@@ -4,6 +4,7 @@ import api from '../utils/api';
 import Loader from './Loader';
 import { useTranslation } from 'react-i18next';
 import { useCurrency } from '../context/CurrencyContext';
+import { getLocalizedName } from '../utils/getLocalizedName';
 
 interface Product {
     _id: string;
@@ -60,7 +61,7 @@ const RelatedProducts: React.FC<RelatedProductsProps> = ({ productId }) => {
                         <div className="relative h-[250px] sm:h-[300px] w-full bg-gray-100 overflow-hidden">
                             <img
                                 src={product.images && product.images.length > 0 ? product.images[0] : (product.image || PLACEHOLDER_IMG)}
-                                alt={product.name}
+                                alt={getLocalizedName(product.name)}
                                 className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                                 loading="lazy"
                                 onError={(e) => {
@@ -74,7 +75,7 @@ const RelatedProducts: React.FC<RelatedProductsProps> = ({ productId }) => {
 
                         <div className="relative p-4">
                             <h3 className="text-sm font-medium text-gray-900 line-clamp-1 group-hover:text-primary-600 transition-colors">
-                                {product.name}
+                                {getLocalizedName(product.name)}
                             </h3>
 
                             <div className="mt-2 flex items-center justify-between">

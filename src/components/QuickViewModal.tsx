@@ -5,6 +5,7 @@ import { useAppDispatch } from '../hooks/useRedux';
 import { addToCart } from '../redux/slices/cartSlice';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
+import { getLocalizedName } from '../utils/getLocalizedName';
 
 interface QuickViewModalProps {
     product: any;
@@ -53,7 +54,7 @@ const QuickViewModal = ({ product, onClose }: QuickViewModalProps) => {
                 <div className="w-full md:w-1/2 h-64 md:h-auto bg-gray-100 relative group">
                     <img
                         src={product.images[0]}
-                        alt={product.name}
+                        alt={getLocalizedName(product.name)}
                         className="w-full h-full object-cover"
                     />
                 </div>
@@ -62,7 +63,7 @@ const QuickViewModal = ({ product, onClose }: QuickViewModalProps) => {
                 <div className="w-full md:w-1/2 p-8 overflow-y-auto">
                     <div className="mb-6">
                         <Link to={`/product/${product._id}`} className="hover:underline">
-                            <h2 className="text-2xl font-black text-gray-900 dark:text-white mb-2 font-display uppercase tracking-tight">{product.name}</h2>
+                            <h2 className="text-2xl font-black text-gray-900 dark:text-white mb-2 font-display uppercase tracking-tight">{getLocalizedName(product.name)}</h2>
                         </Link>
                         <p className="text-xl font-bold text-gray-500 dark:text-gray-400">{product.price} {t('common.currency')}</p>
                     </div>
