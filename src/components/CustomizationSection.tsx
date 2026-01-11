@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import Button from './Button';
 import DesignSelectionModal from './DesignSelectionModal';
 import getLocalizedName from '../utils/getLocalizedName';
+import { getImageUrl } from '../utils/imageUtils';
 
 interface CustomizationSectionProps {
     product: any;
@@ -266,7 +267,7 @@ const CustomizationSection = ({ product, onAddToCart }: CustomizationSectionProp
                             <div className="grid grid-cols-3 gap-3 mb-3">
                                 {uploadedImages.map((img, index) => (
                                     <div key={index} className="relative group aspect-square rounded-lg overflow-hidden bg-gray-100">
-                                        <img src={`http://localhost:5000${img.url}`} alt={`Design ${index + 1}`} className="w-full h-full object-cover" />
+                                        <img src={getImageUrl(img.url)} alt={`Design ${index + 1}`} className="w-full h-full object-cover" />
                                         <button
                                             onClick={() => removeImage(index)}
                                             className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
@@ -309,7 +310,7 @@ const CustomizationSection = ({ product, onAddToCart }: CustomizationSectionProp
                                 <div className="bg-white dark:bg-gray-700 rounded-xl p-4 border-2 border-purple-600">
                                     <div className="flex items-center gap-4">
                                         <img
-                                            src={selectedDesign.image}
+                                            src={selectedDesign.image ? getImageUrl(selectedDesign.image) : ''}
                                             alt={getLocalizedName(selectedDesign.name)}
                                             className="w-24 h-24 object-cover rounded-lg"
                                         />

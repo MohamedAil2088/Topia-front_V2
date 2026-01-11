@@ -9,6 +9,7 @@ import { FiEdit, FiPlus, FiTrash2, FiSearch, FiPackage, FiDollarSign, FiAlertCir
 import api from '../../../utils/api';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
+import { getImageUrl } from '../../../utils/imageUtils';
 
 const MySwal = withReactContent(Swal);
 
@@ -31,13 +32,7 @@ const ProductListPage = () => {
         return name[i18n.language] || name.en || Object.values(name)[0] || 'Product';
     };
 
-    // Helper for image URLs
-    const BASE_URL = 'http://localhost:5000';
-    const getImageUrl = (url: string) => {
-        if (!url) return '';
-        if (url.startsWith('http') || url.startsWith('data:') || url.startsWith('https:')) return url;
-        return `${BASE_URL}${url}`;
-    };
+
 
     // Filter products based on search and stock filter
     const filteredProducts = useMemo(() => {

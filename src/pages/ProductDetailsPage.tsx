@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 import RelatedProducts from '../components/RelatedProducts';
 import CustomizationSection from '../components/CustomizationSection';
 import { getLocalizedName } from '../utils/getLocalizedName';
+import { getImageUrl } from '../utils/imageUtils';
 
 // Loader Component (Inline fallback if missing)
 const Loader = ({ size = 'md' }: { size?: string }) => (
@@ -203,12 +204,9 @@ const ProductDetailsPage = () => {
     if (!product) return null;
 
     // Helper for image URLs
-    const BASE_URL = 'http://localhost:5000';
-    const getImageUrl = (url: string) => {
-        if (!url) return '';
-        if (url.startsWith('http') || url.startsWith('data:') || url.startsWith('/placeholder')) return url;
-        return `${BASE_URL}${url}`;
-    };
+    // Helper for image URLs
+    // Used from utils/imageUtils
+
 
     return (
         <div className="bg-white dark:bg-[#1a1a1a] min-h-screen pb-20 transition-colors duration-300 pt-20">
@@ -669,7 +667,8 @@ const RecentlyViewed = ({ currentId }: { currentId: string }) => {
                 {items.map((item) => (
                     <Link key={item._id} to={`/products/${item._id}`} className="group block">
                         <div className="aspect-[3/4] rounded-xl overflow-hidden bg-gray-100 mb-3 shadow-sm group-hover:shadow-md transition-all">
-                            <img src={item.images && item.images[0] ? item.images[0] : '/placeholder-image.jpg'} alt={getLocalizedName(item.name)} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                            <img src={getImageUrl(item.images && item.images[0] ? item.images[0] : '/placeholder-image.jpg')} alt={getLocalizedName(item.name)} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+
                         </div>
                         <h3 className="text-sm font-bold text-primary-900 group-hover:text-primary-600 truncate">{getLocalizedName(item.name)}</h3>
                         <p className="text-sm text-gray-500">{item.price} EGP</p>

@@ -7,6 +7,7 @@ import api from '../utils/api';
 import Swal from 'sweetalert2';
 import Loader from '../components/Loader';
 import getLocalizedName from '../utils/getLocalizedName';
+import { getImageUrl } from '../utils/imageUtils';
 
 interface Design {
     _id: string;
@@ -177,7 +178,7 @@ const CustomOrderPage = () => {
                                                     }`}
                                             >
                                                 <img
-                                                    src={design.image}
+                                                    src={design.image ? getImageUrl(design.image) : ''}
                                                     alt={getLocalizedName(design.name)}
                                                     className="w-full h-40 object-cover"
                                                 />
@@ -305,7 +306,7 @@ const CustomOrderPage = () => {
                                         <div className="space-y-4 mb-6">
                                             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                                                 <img
-                                                    src={selectedDesign.image}
+                                                    src={selectedDesign.image ? getImageUrl(selectedDesign.image) : ''}
                                                     alt={getLocalizedName(selectedDesign.name)}
                                                     className="w-full h-32 object-cover rounded-lg mb-3"
                                                 />

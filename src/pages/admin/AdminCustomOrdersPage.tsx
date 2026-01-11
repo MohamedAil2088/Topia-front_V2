@@ -5,6 +5,7 @@ import api from '../../utils/api';
 import Button from '../../components/Button';
 import Loader from '../../components/Loader';
 import { getLocalizedName } from '../../utils/getLocalizedName';
+import { getImageUrl } from '../../utils/imageUtils';
 
 const AdminCustomOrdersPage = () => {
     const [orders, setOrders] = useState<any[]>([]);
@@ -174,7 +175,7 @@ const AdminCustomOrdersPage = () => {
                                     <td className="px-6 py-4">
                                         <div className="flex items-center gap-3">
                                             <img
-                                                src={order.product?.images[0]}
+                                                src={order.product?.images && order.product.images[0] ? getImageUrl(order.product.images[0]) : ''}
                                                 alt={getLocalizedName(order.product?.name)}
                                                 className="w-12 h-12 object-cover rounded-lg"
                                             />
@@ -191,7 +192,7 @@ const AdminCustomOrdersPage = () => {
                                             {order.customization.designImages.slice(0, 2).map((img: any, index: number) => (
                                                 <img
                                                     key={index}
-                                                    src={`http://localhost:5000${img.url}`}
+                                                    src={getImageUrl(img.url)}
                                                     alt={`Design ${index + 1}`}
                                                     className="w-10 h-10 object-cover rounded border border-gray-200"
                                                 />
@@ -297,13 +298,13 @@ const AdminCustomOrdersPage = () => {
                                     {selectedOrder.customization.designImages.map((img: any, index: number) => (
                                         <a
                                             key={index}
-                                            href={`http://localhost:5000${img.url}`}
+                                            href={getImageUrl(img.url)}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="aspect-square rounded-lg overflow-hidden border-2 border-gray-200 hover:border-primary-600 transition-colors"
                                         >
                                             <img
-                                                src={`http://localhost:5000${img.url}`}
+                                                src={getImageUrl(img.url)}
                                                 alt={`Design ${index + 1}`}
                                                 className="w-full h-full object-cover"
                                             />

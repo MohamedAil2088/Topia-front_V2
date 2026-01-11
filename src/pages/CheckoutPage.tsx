@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
 
 import { useTranslation } from 'react-i18next';
 import { getLocalizedName } from '../utils/getLocalizedName';
+import { getImageUrl } from '../utils/imageUtils';
 
 const CheckoutPage = () => {
     const { t } = useTranslation();
@@ -324,7 +325,7 @@ const CheckoutPage = () => {
                             {items.map((item: any) => (
                                 <div key={item._id} className="flex justify-between items-center gap-4">
                                     <div className="w-12 h-12 bg-white/10 rounded-lg overflow-hidden">
-                                        <img src={item.image} alt={getLocalizedName(item.name)} className="w-full h-full object-cover" />
+                                        <img src={getImageUrl(item.image)} alt={getLocalizedName(item.name)} className="w-full h-full object-cover" />
                                     </div>
                                     <div className="flex-1">
                                         <h4 className="text-xs font-black uppercase tracking-tight">{getLocalizedName(item.name)}</h4>

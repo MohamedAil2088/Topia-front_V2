@@ -6,6 +6,7 @@ import api from '../utils/api';
 import Loader from '../components/Loader';
 import { useAppSelector } from '../hooks/useRedux';
 import { getLocalizedName } from '../utils/getLocalizedName';
+import { getImageUrl } from '../utils/imageUtils';
 
 const MyCustomOrdersPage = () => {
     const [orders, setOrders] = useState<any[]>([]);
@@ -16,14 +17,7 @@ const MyCustomOrdersPage = () => {
     // SVG Placeholder
     const PLACEHOLDER_IMG = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="300" height="400"%3E%3Crect fill="%23f3f4f6" width="300" height="400"/%3E%3Ctext fill="%239ca3af" font-family="sans-serif" font-size="24" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3ENo Image%3C/text%3E%3C/svg%3E';
 
-    // Base URL Helper
-    const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-    const getDesignUrl = (url: string) => {
-        if (!url) return PLACEHOLDER_IMG;
-        if (url.startsWith('http')) return url;
-        const host = BASE_URL.replace('/api', '');
-        return `${host}${url.startsWith('/') ? '' : '/'}${url}`;
-    };
+
 
     useEffect(() => {
         fetchMyOrders();
@@ -173,7 +167,7 @@ const MyCustomOrdersPage = () => {
                                             <div className="flex gap-6 mb-6">
                                                 <div className="w-24 h-24 rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 flex-shrink-0">
                                                     <img
-                                                        src={order.product?.images?.[0] || PLACEHOLDER_IMG}
+                                                        src={getImageUrl(order.product?.images?.[0]) || PLACEHOLDER_IMG}
                                                         alt={getLocalizedName(order.product?.name)}
                                                         className="w-full h-full object-cover"
                                                         onError={(e) => {
@@ -218,7 +212,7 @@ const MyCustomOrdersPage = () => {
                                                         {order.customization.designImages.map((img: any, index: number) => (
                                                             <div key={index} className="relative group">
                                                                 <img
-                                                                    src={getDesignUrl(img.url)}
+                                                                    src={getImageUrl(img.url)}
                                                                     alt={`Design ${index + 1}`}
                                                                     className="w-20 h-20 object-cover rounded-xl border border-gray-200 shadow-sm bg-white"
                                                                     onError={(e) => {

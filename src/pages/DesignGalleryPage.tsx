@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import api from '../utils/api';
 import Loader from '../components/Loader';
 import CustomDropdown from '../components/CustomDropdown';
+import { getImageUrl } from '../utils/imageUtils';
 
 interface Design {
     _id: string;
@@ -198,7 +199,7 @@ const DesignGalleryPage = () => {
                                     {/* Image */}
                                     <div className="relative h-64 bg-gray-100 overflow-hidden">
                                         <img
-                                            src={design.image.startsWith('http') ? design.image : `http://localhost:5000${design.image}`}
+                                            src={getImageUrl(design.image)}
                                             alt={design.name}
                                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                         />

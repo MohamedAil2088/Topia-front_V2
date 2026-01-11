@@ -10,6 +10,7 @@ import { addToCart } from '../redux/slices/cartSlice';
 import { addToWishlist, removeFromWishlist } from '../redux/slices/wishlistSlice';
 import Swal from 'sweetalert2';
 import { getLocalizedName } from '../utils/getLocalizedName';
+import { getImageUrl } from '../utils/imageUtils';
 
 interface ProductCardProps {
     product: any;
@@ -26,12 +27,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     const isInWishlist = wishlistItems.some(item => item && item._id === product._id);
 
     // Get front and back images
-    // Helper to handle image URLs
-    const getImageUrl = (url: string) => {
-        if (!url) return '';
-        if (url.startsWith('http') || url.startsWith('data:')) return url;
-        return `http://localhost:5000${url}`;
-    };
+
 
     // Get front and back images
     const frontImage = product.images && product.images.length > 0

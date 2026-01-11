@@ -4,6 +4,7 @@ import api from '../../utils/api';
 import Swal from 'sweetalert2';
 import { toast } from 'react-toastify';
 import { getLocalizedName } from '../../utils/getLocalizedName';
+import { getImageUrl } from '../../utils/imageUtils';
 
 interface Review {
     _id: string;
@@ -188,7 +189,7 @@ const AdminReviewsPage = () => {
                                     {/* Product Image */}
                                     <div className="w-24 h-24 flex-shrink-0 bg-gray-100 rounded-xl overflow-hidden">
                                         <img
-                                            src={review.product.images[0]}
+                                            src={review.product?.images && review.product.images[0] ? getImageUrl(review.product.images[0]) : ''}
                                             alt={getLocalizedName(review.product.name)}
                                             className="w-full h-full object-cover"
                                         />

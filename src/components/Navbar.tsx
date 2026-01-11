@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '../hooks/useRedux';
 import { logout } from '../redux/slices/authSlice';
 import { getLocalizedName } from '../utils/getLocalizedName';
+import { getImageUrl } from '../utils/imageUtils';
 
 const Navbar = () => {
     const { i18n } = useTranslation();
@@ -251,7 +252,7 @@ const Navbar = () => {
                                                                             setSearchResults([]);
                                                                         }}
                                                                     >
-                                                                        <img src={product.images?.[0] || 'https://via.placeholder.com/40'} alt={getLocalizedName(product.name)} className="w-10 h-10 object-cover rounded" />
+                                                                        <img src={product.images?.[0] ? getImageUrl(product.images[0]) : 'https://via.placeholder.com/40'} alt={getLocalizedName(product.name)} className="w-10 h-10 object-cover rounded" />
                                                                         <div className="flex-1 overflow-hidden">
                                                                             <p className="text-sm font-semibold text-gray-900 truncate">{getLocalizedName(product.name)}</p>
                                                                             <p className="text-xs text-gray-600">{product.price} EGP</p>

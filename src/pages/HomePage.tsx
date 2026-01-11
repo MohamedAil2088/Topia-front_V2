@@ -10,6 +10,7 @@ import ProductCard from '../components/ProductCard';
 import SizeGuide from '../components/SizeGuide';
 import CustomDesignSection from '../components/CustomDesignSection';
 import { getLocalizedName } from '../utils/getLocalizedName';
+import { getImageUrl } from '../utils/imageUtils';
 
 const HomePage = () => {
     const { t } = useTranslation();
@@ -417,7 +418,7 @@ const HomePage = () => {
                                 >
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent group-hover:from-black/60 transition-all z-10" />
                                     <img
-                                        src={cat.image || "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=800"}
+                                        src={getImageUrl(cat.image) || "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=800"}
                                         alt={getLocalizedName(cat.name)}
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />

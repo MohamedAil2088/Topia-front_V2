@@ -5,6 +5,7 @@ import Loader from './Loader';
 import { useTranslation } from 'react-i18next';
 import { useCurrency } from '../context/CurrencyContext';
 import { getLocalizedName } from '../utils/getLocalizedName';
+import { getImageUrl } from '../utils/imageUtils';
 
 interface Product {
     _id: string;
@@ -60,7 +61,7 @@ const RelatedProducts: React.FC<RelatedProductsProps> = ({ productId }) => {
                     <Link key={product._id} to={`/product/${product._id}`} className="group relative block overflow-hidden rounded-xl bg-white border border-gray-100 hover:border-gray-200 shadow-sm hover:shadow-md transition-all">
                         <div className="relative h-[250px] sm:h-[300px] w-full bg-gray-100 overflow-hidden">
                             <img
-                                src={product.images && product.images.length > 0 ? product.images[0] : (product.image || PLACEHOLDER_IMG)}
+                                src={product.images && product.images.length > 0 ? getImageUrl(product.images[0]) : (product.image ? getImageUrl(product.image) : PLACEHOLDER_IMG)}
                                 alt={getLocalizedName(product.name)}
                                 className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                                 loading="lazy"

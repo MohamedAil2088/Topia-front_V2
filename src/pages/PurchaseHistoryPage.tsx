@@ -8,6 +8,7 @@ import { useAppDispatch, useAppSelector } from '../hooks/useRedux';
 import { addToCart } from '../redux/slices/cartSlice';
 import Swal from 'sweetalert2';
 import { getLocalizedName } from '../utils/getLocalizedName';
+import { getImageUrl } from '../utils/imageUtils';
 
 interface PurchasedProduct {
     _id: string;
@@ -143,7 +144,7 @@ const PurchaseHistoryPage = () => {
                                         <div key={product._id} className="group bg-white rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-2xl hover:border-primary-100 transition-all duration-500 overflow-hidden flex flex-col">
                                             <div className="relative aspect-[4/5] overflow-hidden">
                                                 <img
-                                                    src={product.image || PLACEHOLDER_IMG}
+                                                    src={product.image ? getImageUrl(product.image) : PLACEHOLDER_IMG}
                                                     alt={getLocalizedName(product.name)}
                                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                                     onError={(e) => {

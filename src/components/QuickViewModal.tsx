@@ -6,6 +6,7 @@ import { addToCart } from '../redux/slices/cartSlice';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 import { getLocalizedName } from '../utils/getLocalizedName';
+import { getImageUrl } from '../utils/imageUtils';
 
 interface QuickViewModalProps {
     product: any;
@@ -53,7 +54,7 @@ const QuickViewModal = ({ product, onClose }: QuickViewModalProps) => {
                 {/* Image Section */}
                 <div className="w-full md:w-1/2 h-64 md:h-auto bg-gray-100 relative group">
                     <img
-                        src={product.images[0]}
+                        src={product.images && product.images.length > 0 ? getImageUrl(product.images[0]) : ''}
                         alt={getLocalizedName(product.name)}
                         className="w-full h-full object-cover"
                     />

@@ -3,6 +3,7 @@ import { FiX, FiSearch, FiCheck } from 'react-icons/fi';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import getLocalizedName from '../utils/getLocalizedName';
+import { getImageUrl } from '../utils/imageUtils';
 
 interface Design {
     _id: string;
@@ -177,7 +178,7 @@ const DesignSelectionModal = ({ isOpen, onClose, onSelect }: DesignSelectionModa
                                         {/* Image */}
                                         <div className="aspect-square bg-gray-100">
                                             <img
-                                                src={design.image}
+                                                src={design.image ? getImageUrl(design.image) : ''}
                                                 alt={getLocalizedName(design.name)}
                                                 className="w-full h-full object-cover"
                                             />

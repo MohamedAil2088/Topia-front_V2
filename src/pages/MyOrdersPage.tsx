@@ -5,6 +5,7 @@ import { useAppSelector, useAppDispatch } from '../hooks/useRedux';
 import Loader from '../components/Loader';
 import { FiPackage, FiUser, FiMapPin, FiArrowRight, FiClock, FiCheckCircle, FiTruck, FiChevronRight, FiAlertCircle } from 'react-icons/fi';
 import { getMyOrders } from '../redux/slices/orderSlice';
+import { getImageUrl } from '../utils/imageUtils';
 
 const MyOrdersPage = () => {
     const { t } = useTranslation();
@@ -177,7 +178,7 @@ const MyOrdersPage = () => {
                                                             {order.orderItems?.slice(0, 4).map((item: any, idx: number) => (
                                                                 <div key={idx} className="w-16 h-16 rounded-2xl border-4 border-white overflow-hidden bg-gray-100 shadow-xl relative group/img">
                                                                     <img
-                                                                        src={item.image || PLACEHOLDER_IMG}
+                                                                        src={getImageUrl(item.image) || PLACEHOLDER_IMG}
                                                                         alt=""
                                                                         className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-110"
                                                                         onError={(e) => {

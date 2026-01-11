@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import { getLocalizedName } from '../utils/getLocalizedName';
+import { getImageUrl } from '../utils/imageUtils';
 
 const OrderDetailsPage = () => {
     const { t } = useTranslation();
@@ -196,7 +197,7 @@ const OrderDetailsPage = () => {
                                 <div key={item._id} className="p-6 flex gap-4 items-center">
                                     <div className="w-20 h-24 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0 border border-gray-200">
                                         <img
-                                            src={item.image || PLACEHOLDER_IMG}
+                                            src={getImageUrl(item.image) || PLACEHOLDER_IMG}
                                             alt={getLocalizedName(item.name)}
                                             className="w-full h-full object-cover"
                                             onError={(e) => {

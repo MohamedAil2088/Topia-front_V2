@@ -9,6 +9,7 @@ import {
     FiClock, FiCheck, FiX
 } from 'react-icons/fi';
 import api from '../../utils/api';
+import { getImageUrl } from '../../utils/imageUtils';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import { jsPDF } from 'jspdf';
@@ -455,7 +456,7 @@ const OrderDetailsPage = () => {
                             {order.orderItems?.map((item: any, index: number) => (
                                 <div key={index} className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-gray-200 hover:border-purple-300 transition-all">
                                     <div className="w-20 h-20 bg-white rounded-xl overflow-hidden border-2 border-gray-200 flex-shrink-0">
-                                        <img src={item.image} alt={getName(item.name)} className="w-full h-full object-cover" />
+                                        <img src={item.image ? getImageUrl(item.image) : ''} alt={getName(item.name)} className="w-full h-full object-cover" />
                                     </div>
                                     <div className="flex-1">
                                         <p className="font-black text-gray-900">{getName(item.name)}</p>

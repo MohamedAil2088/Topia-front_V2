@@ -6,6 +6,7 @@ import { FiTrash2, FiShoppingBag, FiHeart } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 import Swal from 'sweetalert2';
 import { getLocalizedName } from '../utils/getLocalizedName';
+import { getImageUrl } from '../utils/imageUtils';
 
 const WishlistPage: React.FC = () => {
     const { t } = useTranslation();
@@ -77,7 +78,7 @@ const WishlistPage: React.FC = () => {
                         <div key={item._id} className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
                             <div className="relative aspect-[4/5] overflow-hidden shrink-0">
                                 <img
-                                    src={item.images[0]}
+                                    src={getImageUrl(item.images[0])}
                                     alt={getLocalizedName(item.name)}
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />

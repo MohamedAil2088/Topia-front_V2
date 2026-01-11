@@ -4,6 +4,7 @@ import { FiPlus, FiEdit, FiTrash2, FiEye, FiImage } from 'react-icons/fi';
 import api from '../../../utils/api';
 import Loader from '../../../components/Loader';
 import Swal from 'sweetalert2';
+import { getImageUrl } from '../../../utils/imageUtils';
 
 const DesignListPage = () => {
     const [designs, setDesigns] = useState<any[]>([]);
@@ -116,8 +117,8 @@ const DesignListPage = () => {
                             key={tab}
                             onClick={() => setFilter(tab)}
                             className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${filter === tab
-                                    ? 'bg-purple-600 text-white'
-                                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                ? 'bg-purple-600 text-white'
+                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                                 }`}
                         >
                             {tab.toUpperCase()}
@@ -148,7 +149,7 @@ const DesignListPage = () => {
                             {/* Image */}
                             <div className="aspect-square bg-gray-100 relative group">
                                 <img
-                                    src={`http://localhost:5000${design.image}`}
+                                    src={getImageUrl(design.image)}
                                     alt={design.name}
                                     className="w-full h-full object-cover"
                                 />
