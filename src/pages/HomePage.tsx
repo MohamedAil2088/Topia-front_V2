@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowRight, FiTruck, FiRefreshCw, FiShield, FiShoppingBag, FiStar, FiInstagram, FiTrendingUp, FiAward, FiPackage, FiHeart } from 'react-icons/fi';
+import { FiArrowRight, FiTruck, FiRefreshCw, FiShield, FiShoppingBag, FiStar, FiTrendingUp, FiAward } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
 import Button from '../components/Button';
@@ -35,15 +35,7 @@ const HomePage = () => {
     const deleteSpeed = 50;
     const pauseTime = 2000;
 
-    // Instagram Posts (mock data - يمكن ربطه بـ Instagram API)
-    const instagramPosts = [
-        { id: 1, image: "https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?w=400", likes: 234 },
-        { id: 2, image: "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=400", likes: 189 },
-        { id: 3, image: "https://images.unsplash.com/photo-1516257984-b1b4d8c9230c?w=400", likes: 312 },
-        { id: 4, image: "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=400", likes: 267 },
-        { id: 5, image: "https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=400", likes: 198 },
-        { id: 6, image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400", likes: 245 }
-    ];
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -395,48 +387,6 @@ const HomePage = () => {
                 </div>
             </section>
 
-            {/* 4. Instagram Feed */}
-            <section className="py-20 bg-white">
-                <div className="container mx-auto px-6">
-                    <div className="text-center mb-12">
-                        <div className="flex items-center justify-center gap-3 mb-4">
-                            <FiInstagram className="text-pink-500" size={36} />
-                            <h2 className="text-4xl font-black text-gray-900">{t('home.instagram.title')}</h2>
-                        </div>
-                        <p className="text-gray-600 text-lg">{t('home.instagram.handle')}</p>
-                    </div>
-
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                        {instagramPosts.map(post => (
-                            <div key={post.id} className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer">
-                                <img
-                                    src={post.image}
-                                    alt="Instagram post"
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
-                                    <div className="flex items-center gap-2 text-white">
-                                        <FiHeart className="fill-white" />
-                                        <span className="font-bold">{post.likes}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    <div className="text-center mt-12">
-                        <a
-                            href="https://instagram.com/topia.menswear"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-black rounded-full hover:shadow-xl transition-all hover:scale-105"
-                        >
-                            <FiInstagram size={24} />
-                            {t('home.instagram.followButton')}
-                        </a>
-                    </div>
-                </div>
-            </section>
 
             {/* 6. Parallax Banner - Our Story */}
             <section className="relative h-[600px] flex items-center justify-center overflow-hidden bg-fixed" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1920)', backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }}>
