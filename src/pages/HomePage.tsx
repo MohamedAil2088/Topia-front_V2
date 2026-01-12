@@ -296,48 +296,6 @@ const HomePage = () => {
                 </div>
             </section>
 
-            {/* Customizable Products Collection */}
-            {
-                customProducts.length > 0 && (
-                    <section className="py-20 bg-gradient-to-r from-indigo-50 to-blue-50">
-                        <div className="container mx-auto px-6">
-                            <div className="text-center mb-12">
-                                <span className="bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide mb-4 inline-block">
-                                    {t('home.customizable.badge')}
-                                </span>
-                                <h2 className="text-4xl font-black text-gray-900 mb-4">{t('home.customizable.title')}</h2>
-                                <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-                                    {t('home.customizable.description')}
-                                </p>
-                            </div>
-
-                            {loading ? (
-                                <div className="flex justify-center p-12"><Loader /></div>
-                            ) : (
-                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                                    {customProducts.map(product => (
-                                        <div key={product._id} className="relative group">
-                                            <div className="absolute top-4 right-4 z-10 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1">
-                                                <span>🎨</span> Customizable
-                                            </div>
-                                            <ProductCard product={product} />
-                                        </div>
-                                    ))}
-                                </div>
-                            )}
-
-                            <div className="text-center mt-12">
-                                <Link
-                                    to="/shop?isCustomizable=true"
-                                    className="inline-flex items-center gap-2 px-8 py-4 bg-white text-gray-900 border-2 border-gray-200 font-black rounded-full hover:border-blue-500 hover:text-blue-600 transition-all shadow-sm hover:shadow-lg"
-                                >
-                                    {t('home.customizable.viewAll')} <FiArrowRight />
-                                </Link>
-                            </div>
-                        </div>
-                    </section>
-                )
-            }
 
             {/* 3. Testimonials Section */}
             <section className="py-20 bg-gradient-to-br from-gray-900 to-black text-white relative overflow-hidden">
