@@ -1,4 +1,38 @@
-export const getImageUrl = (url: any): string => {
+/**
+ * Cloudinary transformation options for image optimization
+ */
+interface ImageOptions {
+    width?: number;
+    height?: number;
+    quality?: 'auto' | 'auto:low' | 'auto:eco' | 'auto:good' | 'auto:best' | number;
+}
+
+/**
+ * Add Cloudinary transformations to optimize images
+ * - Converts to WebP/AVIF automatically (f_auto)
+ * - Compresses with best quality (q_auto)
+ * - Resizes to specified dimensions
+ */
+const addCloudinaryTransforms = (url: string, options?: ImageOptions): string => {
+    if (!url.includes('res.cloudinary.com')) return url;
+
+    // Build transformation string
+    const transforms: string[] = ['f_auto', 'q_auto'];
+
+    if (options?.width) {
+        transforms.push(`w_${options.width}`);
+    }
+    if (options?.height) {
+        transforms.push(`h_${options.height}`);
+    }
+
+    // Insert transformations into Cloudinary URL
+    // Format: .../upload/TRANSFORMS/...
+    const transformString = transforms.join(',');
+    return url.replace('/upload/', `/upload/${transformString}/`);
+};
+
+export const getImageUrl = (url: any, options?: ImageOptions): string => {
     // Handle null, undefined, empty values
     if (!url) return '';
 
@@ -26,9 +60,9 @@ export const getImageUrl = (url: any): string => {
     // If empty string, return empty
     if (url.trim() === '') return '';
 
-    // External URLs - return as is
+    // External URLs - apply Cloudinary transforms if applicable
     if (url.startsWith('http') || url.startsWith('data:') || url.startsWith('blob:')) {
-        return url;
+        return addCloudinaryTransforms(url, options);
     }
 
     // Build the full URL for local images
@@ -38,3 +72,25 @@ export const getImageUrl = (url: any): string => {
 
     return `${baseUrl}${url.startsWith('/') ? '' : '/'}${url}`;
 };
+
+/**
+ * Get optimized thumbnail image (small size for lists/cards)
+ */
+export const getThumbnailUrl = (url: any): string => {
+    return getImageUrl(url, { width: 200, quality: 'auto' });
+};
+
+/**
+ * Get optimized card image (medium size for product cards)
+ */
+export const getCardImageUrl = (url: any): string => {
+    return getImageUrl(url, { width: 400, quality: 'auto' });
+};
+
+/**
+ * Get optimized product detail image (large size)
+ */
+export const getProductImageUrl = (url: any): string => {
+    return getImageUrl(url, { width: 800, quality: 'auto:good' });
+};
+
