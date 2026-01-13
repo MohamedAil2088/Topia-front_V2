@@ -27,5 +27,28 @@ export default defineConfig({
   build: {
     // Chunk size warnings
     chunkSizeWarningLimit: 1000,
+    // Enable minification
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true, // Remove console.log in production
+        drop_debugger: true,
+      },
+    },
+    // Better code splitting
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Separate vendor chunks for better caching
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-redux': ['@reduxjs/toolkit', 'react-redux'],
+          'vendor-ui': ['react-icons', 'sweetalert2', 'react-toastify'],
+          'vendor-i18n': ['i18next', 'react-i18next'],
+        },
+      },
+    },
+    // Source maps for debugging (optional - can disable for smaller build)
+    sourcemap: false,
   },
 });
+
