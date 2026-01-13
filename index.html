@@ -13,9 +13,13 @@
   <link rel="preconnect" href="https://res.cloudinary.com" />
   <link rel="dns-prefetch" href="https://api.exchangerate-api.com" />
 
-  <!-- Preload critical fonts -->
-  <link rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" />
+  <!-- Load Google Fonts asynchronously (non-blocking) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
+  </noscript>
 
   <!-- Primary Meta Tags -->
   <title>TOPIA - Premium Men's Fashion | Egyptian Online Store</title>
