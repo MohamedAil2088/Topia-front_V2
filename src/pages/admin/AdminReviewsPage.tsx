@@ -106,11 +106,17 @@ const AdminReviewsPage = () => {
         }
     };
 
-    const filteredReviews = reviews.filter(review =>
-        review.user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        getLocalizedName(review.product.name).toLowerCase().includes(searchTerm.toLowerCase()) ||
-        review.comment.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    const filteredReviews = reviews.filter(review => {
+        // Skip reviews with deleted user or product
+        if (!review.user || !review.product) return false;
+
+        const userName = review.user.name?.toLowerCase() || '';
+        const productName = getLocalizedName(review.product.name)?.toLowerCase() || '';
+        const comment = review.comment?.toLowerCase() || '';
+        const term = searchTerm.toLowerCase();
+
+        return userName.includes(term) || productName.includes(term) || comment.includes(term);
+    });
 
     return (
         <div className="min-h-screen bg-gray-50 p-8">
