@@ -205,8 +205,20 @@ const ProductListPage = () => {
 
             {/* Products Table */}
             {reduxLoading ? (
-                <div className="flex justify-center p-12 bg-white rounded-2xl border border-gray-100">
-                    <Loader size="lg" />
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden animate-pulse">
+                    <div className="p-6 space-y-4">
+                        {[1, 2, 3, 4, 5, 6].map((i) => (
+                            <div key={i} className="flex items-center gap-4">
+                                <div className="w-16 h-16 bg-gray-200 rounded-xl"></div>
+                                <div className="flex-1 space-y-2">
+                                    <div className="h-4 bg-gray-200 rounded w-48"></div>
+                                    <div className="h-3 bg-gray-200 rounded w-24"></div>
+                                </div>
+                                <div className="h-8 bg-gray-200 rounded w-20"></div>
+                                <div className="h-8 bg-gray-200 rounded w-24"></div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             ) : error ? (
                 <div className="text-red-600 bg-red-50 p-6 rounded-2xl border-2 border-red-100 font-semibold">{error}</div>

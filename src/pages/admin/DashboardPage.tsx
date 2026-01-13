@@ -65,12 +65,58 @@ const DashboardPage = () => {
         sales: item.total
     })) || [];
 
+    // Skeleton Loading - Shows page structure immediately for better LCP
     if (loading) {
         return (
-            <div className="flex justify-center items-center h-screen -mt-24">
-                <div className="text-center">
-                    <Loader size="lg" />
-                    <p className="text-gray-500 mt-4 animate-pulse">Loading Analytics...</p>
+            <div className="space-y-8 pb-12 animate-pulse">
+                {/* Title - Shows immediately for LCP */}
+                <div>
+                    <h1 className="text-3xl font-bold font-display text-gray-900 dark:text-white uppercase italic tracking-tighter">Command Center</h1>
+                    <p className="text-gray-500 dark:text-gray-400 mt-1 uppercase text-[10px] font-black tracking-[0.2em]">Real-time brand performance and elite metrics.</p>
+                </div>
+
+                {/* Skeleton Stat Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {[1, 2, 3, 4].map((i) => (
+                        <div key={i} className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+                            <div className="flex items-start justify-between">
+                                <div className="flex-1">
+                                    <div className="h-3 bg-gray-200 dark:bg-gray-700 rounded w-20 mb-3"></div>
+                                    <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded w-32 mb-2"></div>
+                                    <div className="h-3 bg-gray-200 dark:bg-gray-700 rounded w-24"></div>
+                                </div>
+                                <div className="w-14 h-14 bg-gray-200 dark:bg-gray-700 rounded-2xl"></div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Skeleton Charts */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div className="lg:col-span-2 bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700">
+                        <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-48 mb-8"></div>
+                        <div className="h-[350px] bg-gray-100 dark:bg-gray-700 rounded-xl"></div>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700">
+                        <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-32 mb-6"></div>
+                        <div className="space-y-4">
+                            {[1, 2, 3].map((i) => (
+                                <div key={i} className="h-14 bg-gray-100 dark:bg-gray-700 rounded-2xl"></div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Skeleton Table */}
+                <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden">
+                    <div className="px-8 py-6 border-b border-gray-50 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-900/50">
+                        <div className="h-5 bg-gray-200 dark:bg-gray-700 rounded w-40"></div>
+                    </div>
+                    <div className="p-8 space-y-4">
+                        {[1, 2, 3, 4, 5].map((i) => (
+                            <div key={i} className="h-12 bg-gray-100 dark:bg-gray-700 rounded-lg"></div>
+                        ))}
+                    </div>
                 </div>
             </div>
         );
